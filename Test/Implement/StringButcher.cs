@@ -30,20 +30,13 @@ namespace Test.Implement {
                 //escape with 'exit' programe'
                 if (splitCmd[0] == "exit") break;
                 try {
+                    //factory
                     cmd = creator.Build(splitCmd);
+
                 } catch (Exception ex) {
-                    BcConsole.PrintOutput($"" +
-                        $"Wroing API for insisted commands!{Environment.NewLine}" +
-                        $"1)list  (optional:) path{Environment.NewLine}" +
-                        $"2)seach where *.exe*{Environment.NewLine}" +
-                        $"3)seachall where *.exe*{Environment.NewLine}" +
-                        $"4)simplelist{Environment.NewLine}" +
-                        $"5)simplesearch where *.exe{Environment.NewLine}" +
-                        $"6)simplesearchall where *.exe{Environment.NewLine}" +
-                        $"Please, don't be upset and try again!{Environment.NewLine}" +
-                        $"System exception: {ex.Message}{Environment.NewLine}"
-                    );
+                    BcConsole.PrintOutput($"Hey pal you have make some typing errors. Please, don't be upset and try again!{Environment.NewLine}Exception{ex.Message}");
                 }
+
                 //send command to spider
                 Spider.Commands.Push(cmd);
                 // print result
