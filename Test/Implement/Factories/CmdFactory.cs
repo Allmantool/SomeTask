@@ -1,4 +1,5 @@
-﻿using Test.Abstract;
+﻿using System;
+using Test.Abstract;
 using Test.Implement.Commands;
 
 namespace Test.Implement {
@@ -42,8 +43,7 @@ namespace Test.Implement {
                 cmd = new SimpleCmd(args[2], true, Spider.CurrLocation.FullName);
                 break;
                 default:
-                //BcConsole.PrintOutput("Hey pal you have make some typing errors. Please, don't be upset and try again!");
-                break;
+                throw new Exception(message:"Wrong command for factory!");
             }
 
             return cmd;

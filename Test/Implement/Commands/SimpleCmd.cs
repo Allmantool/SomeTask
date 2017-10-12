@@ -42,17 +42,22 @@ namespace Test.Implement.Commands {
         /// <returns></returns>
         private string ParensFolders(FileInfo searchFile) {
             var dirs = new Queue<string>();
-
             var rootDir = searchFile.Directory;
-
             var depth = 0;
 
-            //folders
-            while (rootDir.FullName != Location) {
-                depth++;
-                dirs.Enqueue($"Depth: {depth}: { new String('-', depth)}>{rootDir.Name}");
+            rootDir.Refresh();
+            //issue: some time rootDir is null, ever when file (folder) exists => something with time to access to I/O
+            if (rootDir.Exists || rootDir != null) {
 
-                rootDir = rootDir.Parent;
+                //folders
+                while (!Location.StartsWith(rootDir.FullName, StringComparison.OrdinalIgnoreCase)) {
+                    rootDir.Refresh();
+
+                    depth++;
+                    dirs.Enqueue($"Depth: {depth}: { new String('-', depth)}>{ rootDir.Name }");
+
+                    rootDir = rootDir.Parent;
+                }
             }
 
             //file

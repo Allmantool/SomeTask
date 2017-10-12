@@ -33,15 +33,13 @@ namespace Test.Implement {
                     //factory
                     cmd = creator.Build(splitCmd);
 
+                    //send command to spider
+                    Spider.Commands.Push(cmd);
+                    // print result
+                    BcConsole.PrintOutput(Spider.ExucCmd() + $"{Environment.NewLine}");
                 } catch (Exception ex) {
-                    BcConsole.PrintOutput($"Hey pal you have make some typing errors. Please, don't be upset and try again!{Environment.NewLine}Exception{ex.Message}");
+                    BcConsole.PrintOutput($"Hey pal you have make some typing errors. Please, don't be upset and try again!{Environment.NewLine}Exception {ex.Message}{Environment.NewLine}");
                 }
-
-                //send command to spider
-                Spider.Commands.Push(cmd);
-                // print result
-                BcConsole.PrintOutput(Spider.ExucCmd() + $"{Environment.NewLine}");
-
             } while (BcConsole.IsExit());
         }
     }
