@@ -4,7 +4,7 @@
     /// </summary>
     public interface ICmd {
         /// <summary>
-        /// Proccess the command and return retult
+        /// Proccess the command and return result
         /// </summary>
         /// <returns></returns>
         string Run();
