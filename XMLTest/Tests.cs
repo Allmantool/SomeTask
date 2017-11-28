@@ -14,11 +14,11 @@ namespace XMLTest {
         /// </summary>
         [TestMethod]
         public void TestBugClassification() {
-            //string _contentRootPath = @"C:\Users\Pavel_Chyzhykau\Desktop\qa-interviewer-master-3bc47169d3c8c9c7699759a26b385d2edd1bf9ac\QAInterviewTestApp\";
+            string _contentRootPath = @"C:\Users\Pavel_Chyzhykau\Desktop\qa-interviewer-master-3bc47169d3c8c9c7699759a26b385d2edd1bf9ac\QAInterviewTestApp\";
             //Directory.GetCurrentDirectory();
-            //const string pathToBugStorage = @"Storage\BugStorage.xml";
+            const string pathToBugStorage = @"Storage\BugStorage.xml";
 
-            var fullPathToBugStorage = @"j:\GitHub\SomeTask\XMLTest\XMLBugs.xml";//Path.Combine(_contentRootPath, pathToBugStorage);
+            var fullPathToBugStorage = Path.Combine(_contentRootPath, pathToBugStorage);// @"j:\GitHub\SomeTask\XMLTest\XMLBugs.xml";
 
 
             //Is that exist?
@@ -43,6 +43,8 @@ namespace XMLTest {
                 var result = xRoot.Elements().Select(x => new {
                     Type = x.Elements().FirstOrDefault(el => el.Name.LocalName == field)?.Value,
                     Description = x.Elements().FirstOrDefault(el => el.Name.LocalName == "bugName")?.Value,
+                    Location = x.Elements().FirstOrDefault(el => el.Name.LocalName == "page")?.Value,
+                    Complexity = x.Elements().FirstOrDefault(el => el.Name.LocalName == "difficultyLevel")?.Value
                 }).GroupBy(item => item.Type).Select((gr, indx) => new BugDto() {
                     Index = indx,
                     Type = gr.Key,
@@ -84,6 +86,8 @@ namespace XMLTest {
     internal class BugDto {
         public int Index { private get; set; }
         public string Type { private get; set; }
+        public string Location { get; set; }
+        public string Complexity { get; set; }
         public IEnumerable<string> Descriptions { private get; set; }
         public int Count { get; set; }
 
