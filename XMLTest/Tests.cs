@@ -22,7 +22,7 @@ namespace XMLTest {
 
 
             //Is that exist?
-            Assert.IsTrue(File.Exists(fullPathToBugStorage));
+            Assert.IsTrue(System.IO.File.Exists(fullPathToBugStorage));
 
             var xRoot = XElement.Load(fullPathToBugStorage);
 
