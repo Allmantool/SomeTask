@@ -1,18 +1,21 @@
-﻿using Test.DesignPatterns.UnitTets.AbstractFactory.Implementaion;
+﻿using FluentAssertions;
+using NUnit.Framework;
+using Test.DesignPatterns.UnitTets.AbstractFactory.Implementaion;
 
 namespace Test.DesignPatterns.UnitTets.AbstractFactory
 {
+    [TestFixture]
     public class AbstractFactory
     {
-        Hero elf = new Hero(new ElfFactory());
-        //elf.Hit();
-        //elf.Run();
- 
-        Hero voin = new Hero(new VoinFactory());
-        //voin.Hit();
-        //voin.Run();
+        [Test]
+        public void Creation_IsNotNull_NewInstance()
+        {
+            Hero elf = new Hero(new ElfFactory());
 
-        
-        
+            elf.Hit();
+            elf.Run();
+
+            elf.Should().NotBeNull();
+        }
     }
 }
