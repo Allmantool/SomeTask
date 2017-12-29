@@ -65,21 +65,29 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractFactory\AbstractFactory.Tests.cs" />
-    <Compile Include="AbstractFactory\Abstraction\HeroFactory.cs" />
-    <Compile Include="AbstractFactory\Abstraction\Movement.cs" />
-    <Compile Include="AbstractFactory\Abstraction\Weapon.cs" />
-    <Compile Include="AbstractFactory\Implementaion\Arbalet.cs" />
-    <Compile Include="AbstractFactory\Implementaion\ElfFactory.cs" />
-    <Compile Include="AbstractFactory\Implementaion\FlyMovement.cs" />
-    <Compile Include="AbstractFactory\Implementaion\Hero.cs" />
-    <Compile Include="AbstractFactory\Implementaion\RunMovement.cs" />
-    <Compile Include="AbstractFactory\Implementaion\Sword.cs" />
-    <Compile Include="AbstractFactory\Implementaion\VoinFactory.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\AbstractFactory.Tests.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Abstraction\HeroFactory.cs" />
+    <Compile Include="Structural Patterns\Flyweight\Abstract\House.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Abstraction\Movement.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Abstraction\Weapon.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Implementaion\Arbalet.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Implementaion\ElfFactory.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Implementaion\FlyMovement.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Implementaion\Hero.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Implementaion\RunMovement.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Implementaion\Sword.cs" />
+    <Compile Include="Creational Patterns\AbstractFactory\Implementaion\VoinFactory.cs" />
+    <Compile Include="Structural Patterns\Flyweight\Flyweight.Tests.cs" />
+    <Compile Include="Structural Patterns\Flyweight\Implementation\BrickHouse.cs" />
+    <Compile Include="Structural Patterns\Flyweight\Implementation\HouseFactory.cs" />
+    <Compile Include="Structural Patterns\Flyweight\Implementation\PanelHouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Behavior Patterns\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

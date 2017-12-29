@@ -1,8 +1,8 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
-using Test.DesignPatterns.UnitTets.AbstractFactory.Implementaion;
+using Test.DesignPatterns.UnitTets.Creational_Patterns.AbstractFactory.Implementaion;
 
-namespace Test.DesignPatterns.UnitTets.AbstractFactory
+namespace Test.DesignPatterns.UnitTets.Creational_Patterns.AbstractFactory
 {
     [TestFixture]
     public class AbstractFactory

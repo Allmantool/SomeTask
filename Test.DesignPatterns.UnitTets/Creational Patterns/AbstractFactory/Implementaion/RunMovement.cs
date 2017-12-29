@@ -1,7 +1,7 @@
 ﻿using System;
-using Test.DesignPatterns.UnitTets.AbstractFactory.Abstraction;
+using Test.DesignPatterns.UnitTets.Creational_Patterns.AbstractFactory.Abstraction;
 
-namespace Test.DesignPatterns.UnitTets.AbstractFactory.Implementaion
+namespace Test.DesignPatterns.UnitTets.Creational_Patterns.AbstractFactory.Implementaion
 {
     public class RunMovement : Movement
     {

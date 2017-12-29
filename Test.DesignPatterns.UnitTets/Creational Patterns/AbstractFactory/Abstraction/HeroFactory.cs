@@ -1,4 +1,4 @@
-﻿namespace Test.DesignPatterns.UnitTets.AbstractFactory.Abstraction
+﻿namespace Test.DesignPatterns.UnitTets.Creational_Patterns.AbstractFactory.Abstraction
 {
     public abstract class HeroFactory
     {
