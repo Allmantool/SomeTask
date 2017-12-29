@@ -88,6 +88,10 @@
     <Compile Include="Structural Patterns\Flyweight\Implementation\HouseFactory.cs" />
     <Compile Include="Structural Patterns\Flyweight\Implementation\PanelHouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structural Patterns\Proxy\Abstraction\IMath.cs" />
+    <Compile Include="Structural Patterns\Proxy\Implementation\Math.cs" />
+    <Compile Include="Structural Patterns\Proxy\Implementation\MathProxy.cs" />
+    <Compile Include="Structural Patterns\Proxy\Proxy.Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Behavior Patterns\Observer\Observer.Tests.cs" />
