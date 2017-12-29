@@ -65,8 +65,14 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behavior Patterns\Observer\Abstraction\IObservable.cs" />
+    <Compile Include="Behavior Patterns\Observer\Implementation\Bank.cs" />
+    <Compile Include="Behavior Patterns\Observer\Implementation\Broker.cs" />
+    <Compile Include="Behavior Patterns\Observer\Implementation\Stock.cs" />
+    <Compile Include="Behavior Patterns\Observer\Implementation\StockInfo.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\AbstractFactory.Tests.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\Abstraction\HeroFactory.cs" />
+    <Compile Include="Behavior Patterns\Observer\Abstraction\IObserver.cs" />
     <Compile Include="Structural Patterns\Flyweight\Abstract\House.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\Abstraction\Movement.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\Abstraction\Weapon.cs" />
@@ -84,11 +90,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behavior Patterns\Observer\Observer.Tests.cs" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Behavior Patterns\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
