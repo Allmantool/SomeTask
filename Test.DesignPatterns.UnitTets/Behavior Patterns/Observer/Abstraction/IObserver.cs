@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Test.DesignPatterns.UnitTets.Creational_Patterns.AbstractFactory.Abstraction
+namespace Test.DesignPatterns.UnitTets.Behavior_Patterns.Observer.Abstraction
 {
     public interface IObserver
     {

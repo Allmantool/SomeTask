@@ -73,6 +73,11 @@
     <Compile Include="Creational Patterns\AbstractFactory\AbstractFactory.Tests.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\Abstraction\HeroFactory.cs" />
     <Compile Include="Behavior Patterns\Observer\Abstraction\IObserver.cs" />
+    <Compile Include="Structural Patterns\Facade\Facade.Tests.cs" />
+    <Compile Include="Structural Patterns\Facade\Implementation\CLR.cs" />
+    <Compile Include="Structural Patterns\Facade\Implementation\Compiller.cs" />
+    <Compile Include="Structural Patterns\Facade\Implementation\Programmer.cs" />
+    <Compile Include="Structural Patterns\Facade\Implementation\VisualStudioFacade.cs" />
     <Compile Include="Structural Patterns\Flyweight\Abstract\House.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\Abstraction\Movement.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\Abstraction\Weapon.cs" />
@@ -88,6 +93,7 @@
     <Compile Include="Structural Patterns\Flyweight\Implementation\HouseFactory.cs" />
     <Compile Include="Structural Patterns\Flyweight\Implementation\PanelHouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structural Patterns\Facade\Implementation\TextEditor.cs" />
     <Compile Include="Structural Patterns\Proxy\Abstraction\IMath.cs" />
     <Compile Include="Structural Patterns\Proxy\Implementation\Math.cs" />
     <Compile Include="Structural Patterns\Proxy\Implementation\MathProxy.cs" />
@@ -97,7 +103,9 @@
     <Compile Include="Behavior Patterns\Observer\Observer.Tests.cs" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Structural Patterns\Facade\Abstract\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
