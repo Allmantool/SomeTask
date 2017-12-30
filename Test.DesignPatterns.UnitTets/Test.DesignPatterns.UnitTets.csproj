@@ -73,6 +73,17 @@
     <Compile Include="Creational Patterns\AbstractFactory\AbstractFactory.Tests.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\Abstraction\HeroFactory.cs" />
     <Compile Include="Behavior Patterns\Observer\Abstraction\IObserver.cs" />
+    <Compile Include="Structural Patterns\Composite\Abstraction\Component.cs" />
+    <Compile Include="Structural Patterns\Composite\Composite.Tests.cs" />
+    <Compile Include="Structural Patterns\Composite\Implementation\Directory.cs" />
+    <Compile Include="Structural Patterns\Composite\Implementation\File.cs" />
+    <Compile Include="Structural Patterns\Decorator\Implementation\BulgerianPizza.cs" />
+    <Compile Include="Structural Patterns\Decorator\Implementation\CheesePizza.cs" />
+    <Compile Include="Structural Patterns\Decorator\Implementation\ItalianPizza.cs" />
+    <Compile Include="Structural Patterns\Decorator\Abstraction\Pizza.cs" />
+    <Compile Include="Structural Patterns\Decorator\Decorator.Tetst.cs" />
+    <Compile Include="Structural Patterns\Decorator\Abstraction\PizzaDecorator.cs" />
+    <Compile Include="Structural Patterns\Decorator\Implementation\TomatoPizza.cs" />
     <Compile Include="Structural Patterns\Facade\Facade.Tests.cs" />
     <Compile Include="Structural Patterns\Facade\Implementation\CLR.cs" />
     <Compile Include="Structural Patterns\Facade\Implementation\Compiller.cs" />
