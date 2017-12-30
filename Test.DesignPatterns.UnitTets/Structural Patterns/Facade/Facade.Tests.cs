@@ -6,6 +6,7 @@ namespace Test.DesignPatterns.UnitTets.Structural_Patterns.Facade
     [TestFixture]
     public class Facade
     {
+        [Test]
         public void Implementation()
         {
             var textEditor = new TextEditor();
