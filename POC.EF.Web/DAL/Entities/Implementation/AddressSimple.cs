@@ -1,11 +1,15 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Spatial;
 using POC.EF.Web.DAL.Entities.Interfaces;
 
 namespace POC.EF.Web.DAL.Entities.Implementation
 {
-    public partial class Address : IEntity
+    [Table("Address",Schema = "Person")]
+    public class AddressSimple : IEntity
     {
+        [Key]
         public int AddressID { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }

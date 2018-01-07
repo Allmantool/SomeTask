@@ -97,7 +97,11 @@
     <Compile Include="Controllers\EFController.cs" />
     <Compile Include="DAL\AdventureWorksContext.cs" />
     <Compile Include="DAL\Entities\Implementation\Address.cs" />
+    <Compile Include="DAL\Entities\Implementation\AddressSimple.cs" />
     <Compile Include="DAL\Entities\Interfaces\IEntity.cs" />
+    <Compile Include="DAL\Configurations\Implementation\AddressConfiguration.cs" />
+    <Compile Include="DAL\Configurations\Interfaces\IEnityConfiguration.cs" />
+    <Compile Include="DAL\SimpleDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

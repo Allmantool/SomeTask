@@ -1,18 +1,28 @@
-﻿using POC.EF.Web.DAL;
+﻿using System.Data.SqlClient;
 using System.Linq;
 using System.Web.Http;
+using POC.EF.Web.DAL;
 
 namespace POC.EF.Web.Controllers
 {
     public class EFController : ApiController
     {
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(int id)
         {
-            using (var dbContext = new AdventureWorksContext())
+            var connectionString = new SqlConnectionStringBuilder()
             {
-                var responseData = dbContext.Addresses.ToList();
+                DataSource = "DESKTOP-9MCCCFM",
+                InitialCatalog = "AdventureWorks2014",
+                ConnectTimeout = 30,
+                IntegratedSecurity = true,
+                MultipleActiveResultSets = true
+            }.ToString();
 
-                return Ok(responseData);
+            using (var dbContext = new AdventureWorksContext(connectionString))
+            {
+                var response1 = dbContext.Addresses.FirstOrDefault(adr => adr.AddressID == id);
+
+                return Ok(response1);
             }
         }
     }
