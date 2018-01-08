@@ -8,9 +8,7 @@ namespace POC.EF.Web
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
-            // Web API routes
+            // Web API routes.
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
@@ -26,12 +24,15 @@ namespace POC.EF.Web
 
             var settings = new JsonSerializerSettings
             {
-                //looping resolve
+                // Looping resolving.
                 ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
                 ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver(),
-                //enum json conversion
+                // Enum json conversion.
                 Formatting = Formatting.Indented
             };
+
+            jsonFormatter.SerializerSettings = settings;
+            jsonFormatter.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
         }
     }
 }

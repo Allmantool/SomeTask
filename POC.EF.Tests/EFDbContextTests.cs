@@ -29,7 +29,7 @@ namespace POC.EF.Tests
         public void Get_FirstRequest_EstimatedTime()
         {
             var timer = new Stopwatch();
-            using (var dbContext = new AdventureWorksContext(connectionString))
+            using (var dbContext = new AdventureWorksDbContext(connectionString))
             {
                 timer.Start();
 

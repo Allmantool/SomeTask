@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web.Http;
 using POC.EF.Web.DAL;
+using POC.EF.Web.DAL.Entities;
 
 namespace POC.EF.Web
 {
@@ -14,26 +15,38 @@ namespace POC.EF.Web
 
             // We can pass as many connections string as we want. 
             // And then iterate throught them creating and caching dbcontext views.
-            var connectionString = new SqlConnectionStringBuilder()
-            {
-                DataSource = "DESKTOP-9MCCCFM",
-                InitialCatalog = "AdventureWorks2014",
-                ConnectTimeout = 30,
-                IntegratedSecurity = true,
-                MultipleActiveResultSets = true
-            }.ToString();
+            //var connectionString = new SqlConnectionStringBuilder()
+            //{
+            //    DataSource = "DESKTOP-9MCCCFM",
+            //    InitialCatalog = "AdventureWorks2014",
+            //    ConnectTimeout = 30,
+            //    IntegratedSecurity = true,
+            //    MultipleActiveResultSets = true
+            //}.ToString();
 
             // Warming up.
             Start(() =>
             {
-                using (var dbContext = new AdventureWorksContext(connectionString))
-                {
-                    dbContext.Configuration.AutoDetectChangesEnabled = false;
-                    dbContext.Configuration.LazyLoadingEnabled = false;
-                    dbContext.Configuration.ProxyCreationEnabled = false;
+                //    using (var dbContext = new AdventureWorksContext(connectionString))
+                //    {
+                //        dbContext.Configuration.AutoDetectChangesEnabled = false;
+                //        dbContext.Configuration.LazyLoadingEnabled = false;
+                //        dbContext.Configuration.ProxyCreationEnabled = false;
 
-                    var response1 = dbContext.Addresses.Count();
-                }
+                //        var response1 = dbContext.Addresses.Count();
+                //    }
+
+                //using (var dbContext = new ADONETCodeFirstModel())
+                //{
+                //    dbContext.Configuration.AutoDetectChangesEnabled = false;
+                //    dbContext.Configuration.LazyLoadingEnabled = false;
+                //    dbContext.Configuration.ProxyCreationEnabled = false;
+
+                //    var result = dbContext
+                //        .Addresses
+                //        .AsNoTracking()
+                //        .Count();
+                //}
             });
         }
 

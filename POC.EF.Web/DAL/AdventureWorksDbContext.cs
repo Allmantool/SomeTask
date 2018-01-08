@@ -6,11 +6,11 @@ using POC.EF.Web.DAL.Entities.Implementation;
 
 namespace POC.EF.Web.DAL
 {
-    public class AdventureWorksContext : DbContext
+    public class AdventureWorksDbContext : DbContext
     {
         private Action<DbModelBuilder> ConfigurationApplicator { get; }
 
-        public AdventureWorksContext(string connectionString, Action<DbModelBuilder> configurationApplicator = null)
+        public AdventureWorksDbContext(string connectionString, Action<DbModelBuilder> configurationApplicator = null)
             : base(connectionString ?? "AdventureWorks")
         {
             ConfigurationApplicator = configurationApplicator ?? (modelBuilder =>
@@ -27,7 +27,7 @@ namespace POC.EF.Web.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<AdventureWorksContext>(null);
+            Database.SetInitializer<AdventureWorksDbContext>(null);
 
             modelBuilder.HasDefaultSchema("dbo");
 
