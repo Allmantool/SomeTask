@@ -1,14 +1,17 @@
 using System.Data.Entity;
+using System.Diagnostics;
 using POC.EF.Web.DAL.Entities;
 
 namespace POC.EF.Web.DAL
 {
-    public partial class FatDbContext : DbContext
+    public partial class ThickDbContext : DbContext
     {
-        public FatDbContext()
-            : base("name=ADONETCodeFirstModel")
+        public ThickDbContext(string connectionString)
+            : base(connectionString)
         {
         }
+
+        #region DbSetsCollection
 
         public virtual DbSet<AWBuildVersion> AWBuildVersions { get; set; }
         public virtual DbSet<DatabaseLog> DatabaseLogs { get; set; }
@@ -82,9 +85,14 @@ namespace POC.EF.Web.DAL
         public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<ProductDocument> ProductDocuments { get; set; }
 
+        #endregion
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //Database.SetInitializer<SimpleDbContext>(null);
+            var watch = new Stopwatch();
+
+            watch.Start();
+            Database.SetInitializer<ThickDbContext>(null);
 
             modelBuilder.Entity<Department>()
                 .HasMany(e => e.EmployeeDepartmentHistories)
@@ -760,6 +768,9 @@ namespace POC.EF.Web.DAL
                 .HasMany(e => e.Customers)
                 .WithOptional(e => e.Store)
                 .HasForeignKey(e => e.StoreID);
+            watch.Stop();
+
+            Debug.WriteLine($"Init relation: {watch.ElapsedMilliseconds}");
         }
     }
 }

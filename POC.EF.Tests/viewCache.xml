@@ -1,0 +1,2091 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<views>
+  <mapping-views hash="f9c06e80588e70e16fc3b033b5c54fadb2f5fdb9217ca40346b742a1f299ab18" conceptual-container="ThickDbContext" store-container="CodeFirstDatabase">
+    <view extent="CodeFirstDatabase.Address"><![CDATA[
+    SELECT VALUE -- Constructing Address
+        [CodeFirstDatabaseSchema.Address](T1.Address_AddressID, T1.Address_AddressLine1, T1.Address_AddressLine2, T1.Address_City, T1.Address_StateProvinceID, T1.Address_PostalCode, T1.Address_SpatialLocation, T1.Address_rowguid, T1.Address_ModifiedDate)
+    FROM (
+        SELECT 
+            T.AddressID AS Address_AddressID, 
+            T.AddressLine1 AS Address_AddressLine1, 
+            T.AddressLine2 AS Address_AddressLine2, 
+            T.City AS Address_City, 
+            T.StateProvinceID AS Address_StateProvinceID, 
+            T.PostalCode AS Address_PostalCode, 
+            T.SpatialLocation AS Address_SpatialLocation, 
+            T.rowguid AS Address_rowguid, 
+            T.ModifiedDate AS Address_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Addresses AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.BusinessEntityAddress"><![CDATA[
+    SELECT VALUE -- Constructing BusinessEntityAddress
+        [CodeFirstDatabaseSchema.BusinessEntityAddress](T1.BusinessEntityAddress_BusinessEntityID, T1.BusinessEntityAddress_AddressID, T1.BusinessEntityAddress_AddressTypeID, T1.BusinessEntityAddress_rowguid, T1.BusinessEntityAddress_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS BusinessEntityAddress_BusinessEntityID, 
+            T.AddressID AS BusinessEntityAddress_AddressID, 
+            T.AddressTypeID AS BusinessEntityAddress_AddressTypeID, 
+            T.rowguid AS BusinessEntityAddress_rowguid, 
+            T.ModifiedDate AS BusinessEntityAddress_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.BusinessEntityAddresses AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.AddressType"><![CDATA[
+    SELECT VALUE -- Constructing AddressType
+        [CodeFirstDatabaseSchema.AddressType](T1.AddressType_AddressTypeID, T1.AddressType_Name, T1.AddressType_rowguid, T1.AddressType_ModifiedDate)
+    FROM (
+        SELECT 
+            T.AddressTypeID AS AddressType_AddressTypeID, 
+            T.Name AS AddressType_Name, 
+            T.rowguid AS AddressType_rowguid, 
+            T.ModifiedDate AS AddressType_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.AddressTypes AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.BusinessEntity"><![CDATA[
+    SELECT VALUE -- Constructing BusinessEntity
+        [CodeFirstDatabaseSchema.BusinessEntity](T1.BusinessEntity_BusinessEntityID, T1.BusinessEntity_rowguid, T1.BusinessEntity_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS BusinessEntity_BusinessEntityID, 
+            T.rowguid AS BusinessEntity_rowguid, 
+            T.ModifiedDate AS BusinessEntity_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.BusinessEntities AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.BusinessEntityContact"><![CDATA[
+    SELECT VALUE -- Constructing BusinessEntityContact
+        [CodeFirstDatabaseSchema.BusinessEntityContact](T1.BusinessEntityContact_BusinessEntityID, T1.BusinessEntityContact_PersonID, T1.BusinessEntityContact_ContactTypeID, T1.BusinessEntityContact_rowguid, T1.BusinessEntityContact_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS BusinessEntityContact_BusinessEntityID, 
+            T.PersonID AS BusinessEntityContact_PersonID, 
+            T.ContactTypeID AS BusinessEntityContact_ContactTypeID, 
+            T.rowguid AS BusinessEntityContact_rowguid, 
+            T.ModifiedDate AS BusinessEntityContact_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.BusinessEntityContacts AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ContactType"><![CDATA[
+    SELECT VALUE -- Constructing ContactType
+        [CodeFirstDatabaseSchema.ContactType](T1.ContactType_ContactTypeID, T1.ContactType_Name, T1.ContactType_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ContactTypeID AS ContactType_ContactTypeID, 
+            T.Name AS ContactType_Name, 
+            T.ModifiedDate AS ContactType_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ContactTypes AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Person"><![CDATA[
+    SELECT VALUE -- Constructing Person
+        [CodeFirstDatabaseSchema.Person](T1.Person_BusinessEntityID, T1.Person_PersonType, T1.Person_NameStyle, T1.Person_Title, T1.Person_FirstName, T1.Person_MiddleName, T1.Person_LastName, T1.Person_Suffix, T1.Person_EmailPromotion, T1.Person_AdditionalContactInfo, T1.Person_Demographics, T1.Person_rowguid, T1.Person_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Person_BusinessEntityID, 
+            T.PersonType AS Person_PersonType, 
+            T.NameStyle AS Person_NameStyle, 
+            T.Title AS Person_Title, 
+            T.FirstName AS Person_FirstName, 
+            T.MiddleName AS Person_MiddleName, 
+            T.LastName AS Person_LastName, 
+            T.Suffix AS Person_Suffix, 
+            T.EmailPromotion AS Person_EmailPromotion, 
+            T.AdditionalContactInfo AS Person_AdditionalContactInfo, 
+            T.Demographics AS Person_Demographics, 
+            T.rowguid AS Person_rowguid, 
+            T.ModifiedDate AS Person_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.People AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Customer"><![CDATA[
+    SELECT VALUE -- Constructing Customer
+        [CodeFirstDatabaseSchema.Customer](T1.Customer_CustomerID, T1.Customer_PersonID, T1.Customer_StoreID, T1.Customer_TerritoryID, T1.Customer_AccountNumber, T1.Customer_rowguid, T1.Customer_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CustomerID AS Customer_CustomerID, 
+            T.PersonID AS Customer_PersonID, 
+            T.StoreID AS Customer_StoreID, 
+            T.TerritoryID AS Customer_TerritoryID, 
+            T.AccountNumber AS Customer_AccountNumber, 
+            T.rowguid AS Customer_rowguid, 
+            T.ModifiedDate AS Customer_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Customers AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SalesOrderHeader"><![CDATA[
+    SELECT VALUE -- Constructing SalesOrderHeader
+        [CodeFirstDatabaseSchema.SalesOrderHeader](T1.SalesOrderHeader_SalesOrderID, T1.SalesOrderHeader_RevisionNumber, T1.SalesOrderHeader_OrderDate, T1.SalesOrderHeader_DueDate, T1.SalesOrderHeader_ShipDate, T1.SalesOrderHeader_Status, T1.SalesOrderHeader_OnlineOrderFlag, T1.SalesOrderHeader_SalesOrderNumber, T1.SalesOrderHeader_PurchaseOrderNumber, T1.SalesOrderHeader_AccountNumber, T1.SalesOrderHeader_CustomerID, T1.SalesOrderHeader_SalesPersonID, T1.SalesOrderHeader_TerritoryID, T1.SalesOrderHeader_BillToAddressID, T1.SalesOrderHeader_ShipToAddressID, T1.SalesOrderHeader_ShipMethodID, T1.SalesOrderHeader_CreditCardID, T1.SalesOrderHeader_CreditCardApprovalCode, T1.SalesOrderHeader_CurrencyRateID, T1.SalesOrderHeader_SubTotal, T1.SalesOrderHeader_TaxAmt, T1.SalesOrderHeader_Freight, T1.SalesOrderHeader_TotalDue, T1.SalesOrderHeader_Comment, T1.SalesOrderHeader_rowguid, T1.SalesOrderHeader_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesOrderID AS SalesOrderHeader_SalesOrderID, 
+            T.RevisionNumber AS SalesOrderHeader_RevisionNumber, 
+            T.OrderDate AS SalesOrderHeader_OrderDate, 
+            T.DueDate AS SalesOrderHeader_DueDate, 
+            T.ShipDate AS SalesOrderHeader_ShipDate, 
+            T.Status AS SalesOrderHeader_Status, 
+            T.OnlineOrderFlag AS SalesOrderHeader_OnlineOrderFlag, 
+            T.SalesOrderNumber AS SalesOrderHeader_SalesOrderNumber, 
+            T.PurchaseOrderNumber AS SalesOrderHeader_PurchaseOrderNumber, 
+            T.AccountNumber AS SalesOrderHeader_AccountNumber, 
+            T.CustomerID AS SalesOrderHeader_CustomerID, 
+            T.SalesPersonID AS SalesOrderHeader_SalesPersonID, 
+            T.TerritoryID AS SalesOrderHeader_TerritoryID, 
+            T.BillToAddressID AS SalesOrderHeader_BillToAddressID, 
+            T.ShipToAddressID AS SalesOrderHeader_ShipToAddressID, 
+            T.ShipMethodID AS SalesOrderHeader_ShipMethodID, 
+            T.CreditCardID AS SalesOrderHeader_CreditCardID, 
+            T.CreditCardApprovalCode AS SalesOrderHeader_CreditCardApprovalCode, 
+            T.CurrencyRateID AS SalesOrderHeader_CurrencyRateID, 
+            T.SubTotal AS SalesOrderHeader_SubTotal, 
+            T.TaxAmt AS SalesOrderHeader_TaxAmt, 
+            T.Freight AS SalesOrderHeader_Freight, 
+            T.TotalDue AS SalesOrderHeader_TotalDue, 
+            T.Comment AS SalesOrderHeader_Comment, 
+            T.rowguid AS SalesOrderHeader_rowguid, 
+            T.ModifiedDate AS SalesOrderHeader_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SalesOrderHeaders AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.CreditCard"><![CDATA[
+    SELECT VALUE -- Constructing CreditCard
+        [CodeFirstDatabaseSchema.CreditCard](T1.CreditCard_CreditCardID, T1.CreditCard_CardType, T1.CreditCard_CardNumber, T1.CreditCard_ExpMonth, T1.CreditCard_ExpYear, T1.CreditCard_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CreditCardID AS CreditCard_CreditCardID, 
+            T.CardType AS CreditCard_CardType, 
+            T.CardNumber AS CreditCard_CardNumber, 
+            T.ExpMonth AS CreditCard_ExpMonth, 
+            T.ExpYear AS CreditCard_ExpYear, 
+            T.ModifiedDate AS CreditCard_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.CreditCards AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.PersonCreditCard"><![CDATA[
+    SELECT VALUE -- Constructing PersonCreditCard
+        [CodeFirstDatabaseSchema.PersonCreditCard](T1.PersonCreditCard_BusinessEntityID, T1.PersonCreditCard_CreditCardID, T1.PersonCreditCard_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS PersonCreditCard_BusinessEntityID, 
+            T.CreditCardID AS PersonCreditCard_CreditCardID, 
+            T.ModifiedDate AS PersonCreditCard_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.PersonCreditCards AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.CurrencyRate"><![CDATA[
+    SELECT VALUE -- Constructing CurrencyRate
+        [CodeFirstDatabaseSchema.CurrencyRate](T1.CurrencyRate_CurrencyRateID, T1.CurrencyRate_CurrencyRateDate, T1.CurrencyRate_FromCurrencyCode, T1.CurrencyRate_ToCurrencyCode, T1.CurrencyRate_AverageRate, T1.CurrencyRate_EndOfDayRate, T1.CurrencyRate_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CurrencyRateID AS CurrencyRate_CurrencyRateID, 
+            T.CurrencyRateDate AS CurrencyRate_CurrencyRateDate, 
+            T.FromCurrencyCode AS CurrencyRate_FromCurrencyCode, 
+            T.ToCurrencyCode AS CurrencyRate_ToCurrencyCode, 
+            T.AverageRate AS CurrencyRate_AverageRate, 
+            T.EndOfDayRate AS CurrencyRate_EndOfDayRate, 
+            T.ModifiedDate AS CurrencyRate_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.CurrencyRates AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Currency"><![CDATA[
+    SELECT VALUE -- Constructing Currency
+        [CodeFirstDatabaseSchema.Currency](T1.Currency_CurrencyCode, T1.Currency_Name, T1.Currency_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CurrencyCode AS Currency_CurrencyCode, 
+            T.Name AS Currency_Name, 
+            T.ModifiedDate AS Currency_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Currencies AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.CountryRegionCurrency"><![CDATA[
+    SELECT VALUE -- Constructing CountryRegionCurrency
+        [CodeFirstDatabaseSchema.CountryRegionCurrency](T1.CountryRegionCurrency_CountryRegionCode, T1.CountryRegionCurrency_CurrencyCode, T1.CountryRegionCurrency_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CountryRegionCode AS CountryRegionCurrency_CountryRegionCode, 
+            T.CurrencyCode AS CountryRegionCurrency_CurrencyCode, 
+            T.ModifiedDate AS CountryRegionCurrency_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.CountryRegionCurrencies AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.CountryRegion"><![CDATA[
+    SELECT VALUE -- Constructing CountryRegion
+        [CodeFirstDatabaseSchema.CountryRegion](T1.CountryRegion_CountryRegionCode, T1.CountryRegion_Name, T1.CountryRegion_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CountryRegionCode AS CountryRegion_CountryRegionCode, 
+            T.Name AS CountryRegion_Name, 
+            T.ModifiedDate AS CountryRegion_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.CountryRegions AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SalesTerritory"><![CDATA[
+    SELECT VALUE -- Constructing SalesTerritory
+        [CodeFirstDatabaseSchema.SalesTerritory](T1.SalesTerritory_TerritoryID, T1.SalesTerritory_Name, T1.SalesTerritory_CountryRegionCode, T1.SalesTerritory_Group, T1.SalesTerritory_SalesYTD, T1.SalesTerritory_SalesLastYear, T1.SalesTerritory_CostYTD, T1.SalesTerritory_CostLastYear, T1.SalesTerritory_rowguid, T1.SalesTerritory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.TerritoryID AS SalesTerritory_TerritoryID, 
+            T.Name AS SalesTerritory_Name, 
+            T.CountryRegionCode AS SalesTerritory_CountryRegionCode, 
+            T.[Group] AS SalesTerritory_Group, 
+            T.SalesYTD AS SalesTerritory_SalesYTD, 
+            T.SalesLastYear AS SalesTerritory_SalesLastYear, 
+            T.CostYTD AS SalesTerritory_CostYTD, 
+            T.CostLastYear AS SalesTerritory_CostLastYear, 
+            T.rowguid AS SalesTerritory_rowguid, 
+            T.ModifiedDate AS SalesTerritory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SalesTerritories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SalesPerson"><![CDATA[
+    SELECT VALUE -- Constructing SalesPerson
+        [CodeFirstDatabaseSchema.SalesPerson](T1.SalesPerson_BusinessEntityID, T1.SalesPerson_TerritoryID, T1.SalesPerson_SalesQuota, T1.SalesPerson_Bonus, T1.SalesPerson_CommissionPct, T1.SalesPerson_SalesYTD, T1.SalesPerson_SalesLastYear, T1.SalesPerson_rowguid, T1.SalesPerson_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS SalesPerson_BusinessEntityID, 
+            T.TerritoryID AS SalesPerson_TerritoryID, 
+            T.SalesQuota AS SalesPerson_SalesQuota, 
+            T.Bonus AS SalesPerson_Bonus, 
+            T.CommissionPct AS SalesPerson_CommissionPct, 
+            T.SalesYTD AS SalesPerson_SalesYTD, 
+            T.SalesLastYear AS SalesPerson_SalesLastYear, 
+            T.rowguid AS SalesPerson_rowguid, 
+            T.ModifiedDate AS SalesPerson_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SalesPersons AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Employee"><![CDATA[
+    SELECT VALUE -- Constructing Employee
+        [CodeFirstDatabaseSchema.Employee](T1.Employee_BusinessEntityID, T1.Employee_NationalIDNumber, T1.Employee_LoginID, T1.Employee_OrganizationLevel, T1.Employee_JobTitle, T1.Employee_BirthDate, T1.Employee_MaritalStatus, T1.Employee_Gender, T1.Employee_HireDate, T1.Employee_SalariedFlag, T1.Employee_VacationHours, T1.Employee_SickLeaveHours, T1.Employee_CurrentFlag, T1.Employee_rowguid, T1.Employee_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Employee_BusinessEntityID, 
+            T.NationalIDNumber AS Employee_NationalIDNumber, 
+            T.LoginID AS Employee_LoginID, 
+            T.OrganizationLevel AS Employee_OrganizationLevel, 
+            T.JobTitle AS Employee_JobTitle, 
+            T.BirthDate AS Employee_BirthDate, 
+            T.MaritalStatus AS Employee_MaritalStatus, 
+            T.Gender AS Employee_Gender, 
+            T.HireDate AS Employee_HireDate, 
+            T.SalariedFlag AS Employee_SalariedFlag, 
+            T.VacationHours AS Employee_VacationHours, 
+            T.SickLeaveHours AS Employee_SickLeaveHours, 
+            T.CurrentFlag AS Employee_CurrentFlag, 
+            T.rowguid AS Employee_rowguid, 
+            T.ModifiedDate AS Employee_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Employees AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.EmployeeDepartmentHistory"><![CDATA[
+    SELECT VALUE -- Constructing EmployeeDepartmentHistory
+        [CodeFirstDatabaseSchema.EmployeeDepartmentHistory](T1.EmployeeDepartmentHistory_BusinessEntityID, T1.EmployeeDepartmentHistory_DepartmentID, T1.EmployeeDepartmentHistory_ShiftID, T1.EmployeeDepartmentHistory_StartDate, T1.EmployeeDepartmentHistory_EndDate, T1.EmployeeDepartmentHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS EmployeeDepartmentHistory_BusinessEntityID, 
+            T.DepartmentID AS EmployeeDepartmentHistory_DepartmentID, 
+            T.ShiftID AS EmployeeDepartmentHistory_ShiftID, 
+            T.StartDate AS EmployeeDepartmentHistory_StartDate, 
+            T.EndDate AS EmployeeDepartmentHistory_EndDate, 
+            T.ModifiedDate AS EmployeeDepartmentHistory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.EmployeeDepartmentHistories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Department"><![CDATA[
+    SELECT VALUE -- Constructing Department
+        [CodeFirstDatabaseSchema.Department](T1.Department_DepartmentID, T1.Department_Name, T1.Department_GroupName, T1.Department_ModifiedDate)
+    FROM (
+        SELECT 
+            T.DepartmentID AS Department_DepartmentID, 
+            T.Name AS Department_Name, 
+            T.GroupName AS Department_GroupName, 
+            T.ModifiedDate AS Department_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Departments AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Shift"><![CDATA[
+    SELECT VALUE -- Constructing Shift
+        [CodeFirstDatabaseSchema.Shift](T1.Shift_ShiftID, T1.Shift_Name, T1.Shift_StartTime, T1.Shift_EndTime, T1.Shift_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ShiftID AS Shift_ShiftID, 
+            T.Name AS Shift_Name, 
+            T.StartTime AS Shift_StartTime, 
+            T.EndTime AS Shift_EndTime, 
+            T.ModifiedDate AS Shift_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Shifts AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.EmployeePayHistory"><![CDATA[
+    SELECT VALUE -- Constructing EmployeePayHistory
+        [CodeFirstDatabaseSchema.EmployeePayHistory](T1.EmployeePayHistory_BusinessEntityID, T1.EmployeePayHistory_RateChangeDate, T1.EmployeePayHistory_Rate, T1.EmployeePayHistory_PayFrequency, T1.EmployeePayHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS EmployeePayHistory_BusinessEntityID, 
+            T.RateChangeDate AS EmployeePayHistory_RateChangeDate, 
+            T.Rate AS EmployeePayHistory_Rate, 
+            T.PayFrequency AS EmployeePayHistory_PayFrequency, 
+            T.ModifiedDate AS EmployeePayHistory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.EmployeePayHistories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.JobCandidate"><![CDATA[
+    SELECT VALUE -- Constructing JobCandidate
+        [CodeFirstDatabaseSchema.JobCandidate](T1.JobCandidate_JobCandidateID, T1.JobCandidate_BusinessEntityID, T1.JobCandidate_Resume, T1.JobCandidate_ModifiedDate)
+    FROM (
+        SELECT 
+            T.JobCandidateID AS JobCandidate_JobCandidateID, 
+            T.BusinessEntityID AS JobCandidate_BusinessEntityID, 
+            T.Resume AS JobCandidate_Resume, 
+            T.ModifiedDate AS JobCandidate_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.JobCandidates AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.PurchaseOrderHeader"><![CDATA[
+    SELECT VALUE -- Constructing PurchaseOrderHeader
+        [CodeFirstDatabaseSchema.PurchaseOrderHeader](T1.PurchaseOrderHeader_PurchaseOrderID, T1.PurchaseOrderHeader_RevisionNumber, T1.PurchaseOrderHeader_Status, T1.PurchaseOrderHeader_EmployeeID, T1.PurchaseOrderHeader_VendorID, T1.PurchaseOrderHeader_ShipMethodID, T1.PurchaseOrderHeader_OrderDate, T1.PurchaseOrderHeader_ShipDate, T1.PurchaseOrderHeader_SubTotal, T1.PurchaseOrderHeader_TaxAmt, T1.PurchaseOrderHeader_Freight, T1.PurchaseOrderHeader_TotalDue, T1.PurchaseOrderHeader_ModifiedDate)
+    FROM (
+        SELECT 
+            T.PurchaseOrderID AS PurchaseOrderHeader_PurchaseOrderID, 
+            T.RevisionNumber AS PurchaseOrderHeader_RevisionNumber, 
+            T.Status AS PurchaseOrderHeader_Status, 
+            T.EmployeeID AS PurchaseOrderHeader_EmployeeID, 
+            T.VendorID AS PurchaseOrderHeader_VendorID, 
+            T.ShipMethodID AS PurchaseOrderHeader_ShipMethodID, 
+            T.OrderDate AS PurchaseOrderHeader_OrderDate, 
+            T.ShipDate AS PurchaseOrderHeader_ShipDate, 
+            T.SubTotal AS PurchaseOrderHeader_SubTotal, 
+            T.TaxAmt AS PurchaseOrderHeader_TaxAmt, 
+            T.Freight AS PurchaseOrderHeader_Freight, 
+            T.TotalDue AS PurchaseOrderHeader_TotalDue, 
+            T.ModifiedDate AS PurchaseOrderHeader_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.PurchaseOrderHeaders AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.PurchaseOrderDetail"><![CDATA[
+    SELECT VALUE -- Constructing PurchaseOrderDetail
+        [CodeFirstDatabaseSchema.PurchaseOrderDetail](T1.PurchaseOrderDetail_PurchaseOrderID, T1.PurchaseOrderDetail_PurchaseOrderDetailID, T1.PurchaseOrderDetail_DueDate, T1.PurchaseOrderDetail_OrderQty, T1.PurchaseOrderDetail_ProductID, T1.PurchaseOrderDetail_UnitPrice, T1.PurchaseOrderDetail_LineTotal, T1.PurchaseOrderDetail_ReceivedQty, T1.PurchaseOrderDetail_RejectedQty, T1.PurchaseOrderDetail_StockedQty, T1.PurchaseOrderDetail_ModifiedDate)
+    FROM (
+        SELECT 
+            T.PurchaseOrderID AS PurchaseOrderDetail_PurchaseOrderID, 
+            T.PurchaseOrderDetailID AS PurchaseOrderDetail_PurchaseOrderDetailID, 
+            T.DueDate AS PurchaseOrderDetail_DueDate, 
+            T.OrderQty AS PurchaseOrderDetail_OrderQty, 
+            T.ProductID AS PurchaseOrderDetail_ProductID, 
+            T.UnitPrice AS PurchaseOrderDetail_UnitPrice, 
+            T.LineTotal AS PurchaseOrderDetail_LineTotal, 
+            T.ReceivedQty AS PurchaseOrderDetail_ReceivedQty, 
+            T.RejectedQty AS PurchaseOrderDetail_RejectedQty, 
+            T.StockedQty AS PurchaseOrderDetail_StockedQty, 
+            T.ModifiedDate AS PurchaseOrderDetail_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.PurchaseOrderDetails AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Product"><![CDATA[
+    SELECT VALUE -- Constructing Product
+        [CodeFirstDatabaseSchema.Product](T1.Product_ProductID, T1.Product_Name, T1.Product_ProductNumber, T1.Product_MakeFlag, T1.Product_FinishedGoodsFlag, T1.Product_Color, T1.Product_SafetyStockLevel, T1.Product_ReorderPoint, T1.Product_StandardCost, T1.Product_ListPrice, T1.Product_Size, T1.Product_SizeUnitMeasureCode, T1.Product_WeightUnitMeasureCode, T1.Product_Weight, T1.Product_DaysToManufacture, T1.Product_ProductLine, T1.Product_Class, T1.Product_Style, T1.Product_ProductSubcategoryID, T1.Product_ProductModelID, T1.Product_SellStartDate, T1.Product_SellEndDate, T1.Product_DiscontinuedDate, T1.Product_rowguid, T1.Product_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS Product_ProductID, 
+            T.Name AS Product_Name, 
+            T.ProductNumber AS Product_ProductNumber, 
+            T.MakeFlag AS Product_MakeFlag, 
+            T.FinishedGoodsFlag AS Product_FinishedGoodsFlag, 
+            T.Color AS Product_Color, 
+            T.SafetyStockLevel AS Product_SafetyStockLevel, 
+            T.ReorderPoint AS Product_ReorderPoint, 
+            T.StandardCost AS Product_StandardCost, 
+            T.ListPrice AS Product_ListPrice, 
+            T.Size AS Product_Size, 
+            T.SizeUnitMeasureCode AS Product_SizeUnitMeasureCode, 
+            T.WeightUnitMeasureCode AS Product_WeightUnitMeasureCode, 
+            T.Weight AS Product_Weight, 
+            T.DaysToManufacture AS Product_DaysToManufacture, 
+            T.ProductLine AS Product_ProductLine, 
+            T.Class AS Product_Class, 
+            T.Style AS Product_Style, 
+            T.ProductSubcategoryID AS Product_ProductSubcategoryID, 
+            T.ProductModelID AS Product_ProductModelID, 
+            T.SellStartDate AS Product_SellStartDate, 
+            T.SellEndDate AS Product_SellEndDate, 
+            T.DiscontinuedDate AS Product_DiscontinuedDate, 
+            T.rowguid AS Product_rowguid, 
+            T.ModifiedDate AS Product_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Products AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.BillOfMaterial"><![CDATA[
+    SELECT VALUE -- Constructing BillOfMaterial
+        [CodeFirstDatabaseSchema.BillOfMaterial](T1.BillOfMaterial_BillOfMaterialsID, T1.BillOfMaterial_ProductAssemblyID, T1.BillOfMaterial_ComponentID, T1.BillOfMaterial_StartDate, T1.BillOfMaterial_EndDate, T1.BillOfMaterial_UnitMeasureCode, T1.BillOfMaterial_BOMLevel, T1.BillOfMaterial_PerAssemblyQty, T1.BillOfMaterial_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BillOfMaterialsID AS BillOfMaterial_BillOfMaterialsID, 
+            T.ProductAssemblyID AS BillOfMaterial_ProductAssemblyID, 
+            T.ComponentID AS BillOfMaterial_ComponentID, 
+            T.StartDate AS BillOfMaterial_StartDate, 
+            T.EndDate AS BillOfMaterial_EndDate, 
+            T.UnitMeasureCode AS BillOfMaterial_UnitMeasureCode, 
+            T.BOMLevel AS BillOfMaterial_BOMLevel, 
+            T.PerAssemblyQty AS BillOfMaterial_PerAssemblyQty, 
+            T.ModifiedDate AS BillOfMaterial_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.BillOfMaterials AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.UnitMeasure"><![CDATA[
+    SELECT VALUE -- Constructing UnitMeasure
+        [CodeFirstDatabaseSchema.UnitMeasure](T1.UnitMeasure_UnitMeasureCode, T1.UnitMeasure_Name, T1.UnitMeasure_ModifiedDate)
+    FROM (
+        SELECT 
+            T.UnitMeasureCode AS UnitMeasure_UnitMeasureCode, 
+            T.Name AS UnitMeasure_Name, 
+            T.ModifiedDate AS UnitMeasure_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.UnitMeasures AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductVendor"><![CDATA[
+    SELECT VALUE -- Constructing ProductVendor
+        [CodeFirstDatabaseSchema.ProductVendor](T1.ProductVendor_ProductID, T1.ProductVendor_BusinessEntityID, T1.ProductVendor_AverageLeadTime, T1.ProductVendor_StandardPrice, T1.ProductVendor_LastReceiptCost, T1.ProductVendor_LastReceiptDate, T1.ProductVendor_MinOrderQty, T1.ProductVendor_MaxOrderQty, T1.ProductVendor_OnOrderQty, T1.ProductVendor_UnitMeasureCode, T1.ProductVendor_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductVendor_ProductID, 
+            T.BusinessEntityID AS ProductVendor_BusinessEntityID, 
+            T.AverageLeadTime AS ProductVendor_AverageLeadTime, 
+            T.StandardPrice AS ProductVendor_StandardPrice, 
+            T.LastReceiptCost AS ProductVendor_LastReceiptCost, 
+            T.LastReceiptDate AS ProductVendor_LastReceiptDate, 
+            T.MinOrderQty AS ProductVendor_MinOrderQty, 
+            T.MaxOrderQty AS ProductVendor_MaxOrderQty, 
+            T.OnOrderQty AS ProductVendor_OnOrderQty, 
+            T.UnitMeasureCode AS ProductVendor_UnitMeasureCode, 
+            T.ModifiedDate AS ProductVendor_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductVendors AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Vendor"><![CDATA[
+    SELECT VALUE -- Constructing Vendor
+        [CodeFirstDatabaseSchema.Vendor](T1.Vendor_BusinessEntityID, T1.Vendor_AccountNumber, T1.Vendor_Name, T1.Vendor_CreditRating, T1.Vendor_PreferredVendorStatus, T1.Vendor_ActiveFlag, T1.Vendor_PurchasingWebServiceURL, T1.Vendor_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Vendor_BusinessEntityID, 
+            T.AccountNumber AS Vendor_AccountNumber, 
+            T.Name AS Vendor_Name, 
+            T.CreditRating AS Vendor_CreditRating, 
+            T.PreferredVendorStatus AS Vendor_PreferredVendorStatus, 
+            T.ActiveFlag AS Vendor_ActiveFlag, 
+            T.PurchasingWebServiceURL AS Vendor_PurchasingWebServiceURL, 
+            T.ModifiedDate AS Vendor_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Vendors AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductCostHistory"><![CDATA[
+    SELECT VALUE -- Constructing ProductCostHistory
+        [CodeFirstDatabaseSchema.ProductCostHistory](T1.ProductCostHistory_ProductID, T1.ProductCostHistory_StartDate, T1.ProductCostHistory_EndDate, T1.ProductCostHistory_StandardCost, T1.ProductCostHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductCostHistory_ProductID, 
+            T.StartDate AS ProductCostHistory_StartDate, 
+            T.EndDate AS ProductCostHistory_EndDate, 
+            T.StandardCost AS ProductCostHistory_StandardCost, 
+            T.ModifiedDate AS ProductCostHistory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductCostHistories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductDocument"><![CDATA[
+    SELECT VALUE -- Constructing ProductDocument
+        [CodeFirstDatabaseSchema.ProductDocument](T1.ProductDocument_ProductID, T1.ProductDocument_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductDocument_ProductID, 
+            T.ModifiedDate AS ProductDocument_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductDocuments AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductInventory"><![CDATA[
+    SELECT VALUE -- Constructing ProductInventory
+        [CodeFirstDatabaseSchema.ProductInventory](T1.ProductInventory_ProductID, T1.ProductInventory_LocationID, T1.ProductInventory_Shelf, T1.ProductInventory_Bin, T1.ProductInventory_Quantity, T1.ProductInventory_rowguid, T1.ProductInventory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductInventory_ProductID, 
+            T.LocationID AS ProductInventory_LocationID, 
+            T.Shelf AS ProductInventory_Shelf, 
+            T.Bin AS ProductInventory_Bin, 
+            T.Quantity AS ProductInventory_Quantity, 
+            T.rowguid AS ProductInventory_rowguid, 
+            T.ModifiedDate AS ProductInventory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductInventories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Location"><![CDATA[
+    SELECT VALUE -- Constructing Location
+        [CodeFirstDatabaseSchema.Location](T1.Location_LocationID, T1.Location_Name, T1.Location_CostRate, T1.Location_Availability, T1.Location_ModifiedDate)
+    FROM (
+        SELECT 
+            T.LocationID AS Location_LocationID, 
+            T.Name AS Location_Name, 
+            T.CostRate AS Location_CostRate, 
+            T.Availability AS Location_Availability, 
+            T.ModifiedDate AS Location_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Locations AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.WorkOrderRouting"><![CDATA[
+    SELECT VALUE -- Constructing WorkOrderRouting
+        [CodeFirstDatabaseSchema.WorkOrderRouting](T1.WorkOrderRouting_WorkOrderID, T1.WorkOrderRouting_ProductID, T1.WorkOrderRouting_OperationSequence, T1.WorkOrderRouting_LocationID, T1.WorkOrderRouting_ScheduledStartDate, T1.WorkOrderRouting_ScheduledEndDate, T1.WorkOrderRouting_ActualStartDate, T1.WorkOrderRouting_ActualEndDate, T1.WorkOrderRouting_ActualResourceHrs, T1.WorkOrderRouting_PlannedCost, T1.WorkOrderRouting_ActualCost, T1.WorkOrderRouting_ModifiedDate)
+    FROM (
+        SELECT 
+            T.WorkOrderID AS WorkOrderRouting_WorkOrderID, 
+            T.ProductID AS WorkOrderRouting_ProductID, 
+            T.OperationSequence AS WorkOrderRouting_OperationSequence, 
+            T.LocationID AS WorkOrderRouting_LocationID, 
+            T.ScheduledStartDate AS WorkOrderRouting_ScheduledStartDate, 
+            T.ScheduledEndDate AS WorkOrderRouting_ScheduledEndDate, 
+            T.ActualStartDate AS WorkOrderRouting_ActualStartDate, 
+            T.ActualEndDate AS WorkOrderRouting_ActualEndDate, 
+            T.ActualResourceHrs AS WorkOrderRouting_ActualResourceHrs, 
+            T.PlannedCost AS WorkOrderRouting_PlannedCost, 
+            T.ActualCost AS WorkOrderRouting_ActualCost, 
+            T.ModifiedDate AS WorkOrderRouting_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.WorkOrderRoutings AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.WorkOrder"><![CDATA[
+    SELECT VALUE -- Constructing WorkOrder
+        [CodeFirstDatabaseSchema.WorkOrder](T1.WorkOrder_WorkOrderID, T1.WorkOrder_ProductID, T1.WorkOrder_OrderQty, T1.WorkOrder_StockedQty, T1.WorkOrder_ScrappedQty, T1.WorkOrder_StartDate, T1.WorkOrder_EndDate, T1.WorkOrder_DueDate, T1.WorkOrder_ScrapReasonID, T1.WorkOrder_ModifiedDate)
+    FROM (
+        SELECT 
+            T.WorkOrderID AS WorkOrder_WorkOrderID, 
+            T.ProductID AS WorkOrder_ProductID, 
+            T.OrderQty AS WorkOrder_OrderQty, 
+            T.StockedQty AS WorkOrder_StockedQty, 
+            T.ScrappedQty AS WorkOrder_ScrappedQty, 
+            T.StartDate AS WorkOrder_StartDate, 
+            T.EndDate AS WorkOrder_EndDate, 
+            T.DueDate AS WorkOrder_DueDate, 
+            T.ScrapReasonID AS WorkOrder_ScrapReasonID, 
+            T.ModifiedDate AS WorkOrder_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.WorkOrders AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ScrapReason"><![CDATA[
+    SELECT VALUE -- Constructing ScrapReason
+        [CodeFirstDatabaseSchema.ScrapReason](T1.ScrapReason_ScrapReasonID, T1.ScrapReason_Name, T1.ScrapReason_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ScrapReasonID AS ScrapReason_ScrapReasonID, 
+            T.Name AS ScrapReason_Name, 
+            T.ModifiedDate AS ScrapReason_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ScrapReasons AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductListPriceHistory"><![CDATA[
+    SELECT VALUE -- Constructing ProductListPriceHistory
+        [CodeFirstDatabaseSchema.ProductListPriceHistory](T1.ProductListPriceHistory_ProductID, T1.ProductListPriceHistory_StartDate, T1.ProductListPriceHistory_EndDate, T1.ProductListPriceHistory_ListPrice, T1.ProductListPriceHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductListPriceHistory_ProductID, 
+            T.StartDate AS ProductListPriceHistory_StartDate, 
+            T.EndDate AS ProductListPriceHistory_EndDate, 
+            T.ListPrice AS ProductListPriceHistory_ListPrice, 
+            T.ModifiedDate AS ProductListPriceHistory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductListPriceHistories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductModel"><![CDATA[
+    SELECT VALUE -- Constructing ProductModel
+        [CodeFirstDatabaseSchema.ProductModel](T1.ProductModel_ProductModelID, T1.ProductModel_Name, T1.ProductModel_CatalogDescription, T1.ProductModel_Instructions, T1.ProductModel_rowguid, T1.ProductModel_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductModelID AS ProductModel_ProductModelID, 
+            T.Name AS ProductModel_Name, 
+            T.CatalogDescription AS ProductModel_CatalogDescription, 
+            T.Instructions AS ProductModel_Instructions, 
+            T.rowguid AS ProductModel_rowguid, 
+            T.ModifiedDate AS ProductModel_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductModels AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductModelIllustration"><![CDATA[
+    SELECT VALUE -- Constructing ProductModelIllustration
+        [CodeFirstDatabaseSchema.ProductModelIllustration](T1.ProductModelIllustration_ProductModelID, T1.ProductModelIllustration_IllustrationID, T1.ProductModelIllustration_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductModelID AS ProductModelIllustration_ProductModelID, 
+            T.IllustrationID AS ProductModelIllustration_IllustrationID, 
+            T.ModifiedDate AS ProductModelIllustration_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductModelIllustrations AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Illustration"><![CDATA[
+    SELECT VALUE -- Constructing Illustration
+        [CodeFirstDatabaseSchema.Illustration](T1.Illustration_IllustrationID, T1.Illustration_Diagram, T1.Illustration_ModifiedDate)
+    FROM (
+        SELECT 
+            T.IllustrationID AS Illustration_IllustrationID, 
+            T.Diagram AS Illustration_Diagram, 
+            T.ModifiedDate AS Illustration_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Illustrations AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductModelProductDescriptionCulture"><![CDATA[
+    SELECT VALUE -- Constructing ProductModelProductDescriptionCulture
+        [CodeFirstDatabaseSchema.ProductModelProductDescriptionCulture](T1.ProductModelProductDescriptionCulture_ProductModelID, T1.ProductModelProductDescriptionCulture_ProductDescriptionID, T1.ProductModelProductDescriptionCulture_CultureID, T1.ProductModelProductDescriptionCulture_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductModelID AS ProductModelProductDescriptionCulture_ProductModelID, 
+            T.ProductDescriptionID AS ProductModelProductDescriptionCulture_ProductDescriptionID, 
+            T.CultureID AS ProductModelProductDescriptionCulture_CultureID, 
+            T.ModifiedDate AS ProductModelProductDescriptionCulture_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductModelProductDescriptionCultures AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Culture"><![CDATA[
+    SELECT VALUE -- Constructing Culture
+        [CodeFirstDatabaseSchema.Culture](T1.Culture_CultureID, T1.Culture_Name, T1.Culture_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CultureID AS Culture_CultureID, 
+            T.Name AS Culture_Name, 
+            T.ModifiedDate AS Culture_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Cultures AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductDescription"><![CDATA[
+    SELECT VALUE -- Constructing ProductDescription
+        [CodeFirstDatabaseSchema.ProductDescription](T1.ProductDescription_ProductDescriptionID, T1.ProductDescription_Description, T1.ProductDescription_rowguid, T1.ProductDescription_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductDescriptionID AS ProductDescription_ProductDescriptionID, 
+            T.Description AS ProductDescription_Description, 
+            T.rowguid AS ProductDescription_rowguid, 
+            T.ModifiedDate AS ProductDescription_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductDescriptions AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductProductPhoto"><![CDATA[
+    SELECT VALUE -- Constructing ProductProductPhoto
+        [CodeFirstDatabaseSchema.ProductProductPhoto](T1.ProductProductPhoto_ProductID, T1.ProductProductPhoto_ProductPhotoID, T1.ProductProductPhoto_Primary, T1.ProductProductPhoto_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductProductPhoto_ProductID, 
+            T.ProductPhotoID AS ProductProductPhoto_ProductPhotoID, 
+            T.Primary AS ProductProductPhoto_Primary, 
+            T.ModifiedDate AS ProductProductPhoto_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductProductPhotoes AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductPhoto"><![CDATA[
+    SELECT VALUE -- Constructing ProductPhoto
+        [CodeFirstDatabaseSchema.ProductPhoto](T1.ProductPhoto_ProductPhotoID, T1.ProductPhoto_ThumbNailPhoto, T1.ProductPhoto_ThumbnailPhotoFileName, T1.ProductPhoto_LargePhoto, T1.ProductPhoto_LargePhotoFileName, T1.ProductPhoto_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductPhotoID AS ProductPhoto_ProductPhotoID, 
+            T.ThumbNailPhoto AS ProductPhoto_ThumbNailPhoto, 
+            T.ThumbnailPhotoFileName AS ProductPhoto_ThumbnailPhotoFileName, 
+            T.LargePhoto AS ProductPhoto_LargePhoto, 
+            T.LargePhotoFileName AS ProductPhoto_LargePhotoFileName, 
+            T.ModifiedDate AS ProductPhoto_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductPhotoes AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductReview"><![CDATA[
+    SELECT VALUE -- Constructing ProductReview
+        [CodeFirstDatabaseSchema.ProductReview](T1.ProductReview_ProductReviewID, T1.ProductReview_ProductID, T1.ProductReview_ReviewerName, T1.ProductReview_ReviewDate, T1.ProductReview_EmailAddress, T1.ProductReview_Rating, T1.ProductReview_Comments, T1.ProductReview_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductReviewID AS ProductReview_ProductReviewID, 
+            T.ProductID AS ProductReview_ProductID, 
+            T.ReviewerName AS ProductReview_ReviewerName, 
+            T.ReviewDate AS ProductReview_ReviewDate, 
+            T.EmailAddress AS ProductReview_EmailAddress, 
+            T.Rating AS ProductReview_Rating, 
+            T.Comments AS ProductReview_Comments, 
+            T.ModifiedDate AS ProductReview_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductReviews AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductSubcategory"><![CDATA[
+    SELECT VALUE -- Constructing ProductSubcategory
+        [CodeFirstDatabaseSchema.ProductSubcategory](T1.ProductSubcategory_ProductSubcategoryID, T1.ProductSubcategory_ProductCategoryID, T1.ProductSubcategory_Name, T1.ProductSubcategory_rowguid, T1.ProductSubcategory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductSubcategoryID AS ProductSubcategory_ProductSubcategoryID, 
+            T.ProductCategoryID AS ProductSubcategory_ProductCategoryID, 
+            T.Name AS ProductSubcategory_Name, 
+            T.rowguid AS ProductSubcategory_rowguid, 
+            T.ModifiedDate AS ProductSubcategory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductSubcategories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ProductCategory"><![CDATA[
+    SELECT VALUE -- Constructing ProductCategory
+        [CodeFirstDatabaseSchema.ProductCategory](T1.ProductCategory_ProductCategoryID, T1.ProductCategory_Name, T1.ProductCategory_rowguid, T1.ProductCategory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductCategoryID AS ProductCategory_ProductCategoryID, 
+            T.Name AS ProductCategory_Name, 
+            T.rowguid AS ProductCategory_rowguid, 
+            T.ModifiedDate AS ProductCategory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ProductCategories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ShoppingCartItem"><![CDATA[
+    SELECT VALUE -- Constructing ShoppingCartItem
+        [CodeFirstDatabaseSchema.ShoppingCartItem](T1.ShoppingCartItem_ShoppingCartItemID, T1.ShoppingCartItem_ShoppingCartID, T1.ShoppingCartItem_Quantity, T1.ShoppingCartItem_ProductID, T1.ShoppingCartItem_DateCreated, T1.ShoppingCartItem_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ShoppingCartItemID AS ShoppingCartItem_ShoppingCartItemID, 
+            T.ShoppingCartID AS ShoppingCartItem_ShoppingCartID, 
+            T.Quantity AS ShoppingCartItem_Quantity, 
+            T.ProductID AS ShoppingCartItem_ProductID, 
+            T.DateCreated AS ShoppingCartItem_DateCreated, 
+            T.ModifiedDate AS ShoppingCartItem_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ShoppingCartItems AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SpecialOfferProduct"><![CDATA[
+    SELECT VALUE -- Constructing SpecialOfferProduct
+        [CodeFirstDatabaseSchema.SpecialOfferProduct](T1.SpecialOfferProduct_SpecialOfferID, T1.SpecialOfferProduct_ProductID, T1.SpecialOfferProduct_rowguid, T1.SpecialOfferProduct_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SpecialOfferID AS SpecialOfferProduct_SpecialOfferID, 
+            T.ProductID AS SpecialOfferProduct_ProductID, 
+            T.rowguid AS SpecialOfferProduct_rowguid, 
+            T.ModifiedDate AS SpecialOfferProduct_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SpecialOfferProducts AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SalesOrderDetail"><![CDATA[
+    SELECT VALUE -- Constructing SalesOrderDetail
+        [CodeFirstDatabaseSchema.SalesOrderDetail](T1.SalesOrderDetail_SalesOrderID, T1.SalesOrderDetail_SalesOrderDetailID, T1.SalesOrderDetail_CarrierTrackingNumber, T1.SalesOrderDetail_OrderQty, T1.SalesOrderDetail_ProductID, T1.SalesOrderDetail_SpecialOfferID, T1.SalesOrderDetail_UnitPrice, T1.SalesOrderDetail_UnitPriceDiscount, T1.SalesOrderDetail_LineTotal, T1.SalesOrderDetail_rowguid, T1.SalesOrderDetail_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesOrderID AS SalesOrderDetail_SalesOrderID, 
+            T.SalesOrderDetailID AS SalesOrderDetail_SalesOrderDetailID, 
+            T.CarrierTrackingNumber AS SalesOrderDetail_CarrierTrackingNumber, 
+            T.OrderQty AS SalesOrderDetail_OrderQty, 
+            T.ProductID AS SalesOrderDetail_ProductID, 
+            T.SpecialOfferID AS SalesOrderDetail_SpecialOfferID, 
+            T.UnitPrice AS SalesOrderDetail_UnitPrice, 
+            T.UnitPriceDiscount AS SalesOrderDetail_UnitPriceDiscount, 
+            T.LineTotal AS SalesOrderDetail_LineTotal, 
+            T.rowguid AS SalesOrderDetail_rowguid, 
+            T.ModifiedDate AS SalesOrderDetail_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SalesOrderDetails AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SpecialOffer"><![CDATA[
+    SELECT VALUE -- Constructing SpecialOffer
+        [CodeFirstDatabaseSchema.SpecialOffer](T1.SpecialOffer_SpecialOfferID, T1.SpecialOffer_Description, T1.SpecialOffer_DiscountPct, T1.SpecialOffer_Type, T1.SpecialOffer_Category, T1.SpecialOffer_StartDate, T1.SpecialOffer_EndDate, T1.SpecialOffer_MinQty, T1.SpecialOffer_MaxQty, T1.SpecialOffer_rowguid, T1.SpecialOffer_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SpecialOfferID AS SpecialOffer_SpecialOfferID, 
+            T.Description AS SpecialOffer_Description, 
+            T.DiscountPct AS SpecialOffer_DiscountPct, 
+            T.Type AS SpecialOffer_Type, 
+            T.Category AS SpecialOffer_Category, 
+            T.StartDate AS SpecialOffer_StartDate, 
+            T.EndDate AS SpecialOffer_EndDate, 
+            T.MinQty AS SpecialOffer_MinQty, 
+            T.MaxQty AS SpecialOffer_MaxQty, 
+            T.rowguid AS SpecialOffer_rowguid, 
+            T.ModifiedDate AS SpecialOffer_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SpecialOffers AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.TransactionHistory"><![CDATA[
+    SELECT VALUE -- Constructing TransactionHistory
+        [CodeFirstDatabaseSchema.TransactionHistory](T1.TransactionHistory_TransactionID, T1.TransactionHistory_ProductID, T1.TransactionHistory_ReferenceOrderID, T1.TransactionHistory_ReferenceOrderLineID, T1.TransactionHistory_TransactionDate, T1.TransactionHistory_TransactionType, T1.TransactionHistory_Quantity, T1.TransactionHistory_ActualCost, T1.TransactionHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.TransactionID AS TransactionHistory_TransactionID, 
+            T.ProductID AS TransactionHistory_ProductID, 
+            T.ReferenceOrderID AS TransactionHistory_ReferenceOrderID, 
+            T.ReferenceOrderLineID AS TransactionHistory_ReferenceOrderLineID, 
+            T.TransactionDate AS TransactionHistory_TransactionDate, 
+            T.TransactionType AS TransactionHistory_TransactionType, 
+            T.Quantity AS TransactionHistory_Quantity, 
+            T.ActualCost AS TransactionHistory_ActualCost, 
+            T.ModifiedDate AS TransactionHistory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.TransactionHistories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ShipMethod"><![CDATA[
+    SELECT VALUE -- Constructing ShipMethod
+        [CodeFirstDatabaseSchema.ShipMethod](T1.ShipMethod_ShipMethodID, T1.ShipMethod_Name, T1.ShipMethod_ShipBase, T1.ShipMethod_ShipRate, T1.ShipMethod_rowguid, T1.ShipMethod_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ShipMethodID AS ShipMethod_ShipMethodID, 
+            T.Name AS ShipMethod_Name, 
+            T.ShipBase AS ShipMethod_ShipBase, 
+            T.ShipRate AS ShipMethod_ShipRate, 
+            T.rowguid AS ShipMethod_rowguid, 
+            T.ModifiedDate AS ShipMethod_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.ShipMethods AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SalesPersonQuotaHistory"><![CDATA[
+    SELECT VALUE -- Constructing SalesPersonQuotaHistory
+        [CodeFirstDatabaseSchema.SalesPersonQuotaHistory](T1.SalesPersonQuotaHistory_BusinessEntityID, T1.SalesPersonQuotaHistory_QuotaDate, T1.SalesPersonQuotaHistory_SalesQuota, T1.SalesPersonQuotaHistory_rowguid, T1.SalesPersonQuotaHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS SalesPersonQuotaHistory_BusinessEntityID, 
+            T.QuotaDate AS SalesPersonQuotaHistory_QuotaDate, 
+            T.SalesQuota AS SalesPersonQuotaHistory_SalesQuota, 
+            T.rowguid AS SalesPersonQuotaHistory_rowguid, 
+            T.ModifiedDate AS SalesPersonQuotaHistory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SalesPersonQuotaHistories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SalesTerritoryHistory"><![CDATA[
+    SELECT VALUE -- Constructing SalesTerritoryHistory
+        [CodeFirstDatabaseSchema.SalesTerritoryHistory](T1.SalesTerritoryHistory_BusinessEntityID, T1.SalesTerritoryHistory_TerritoryID, T1.SalesTerritoryHistory_StartDate, T1.SalesTerritoryHistory_EndDate, T1.SalesTerritoryHistory_rowguid, T1.SalesTerritoryHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS SalesTerritoryHistory_BusinessEntityID, 
+            T.TerritoryID AS SalesTerritoryHistory_TerritoryID, 
+            T.StartDate AS SalesTerritoryHistory_StartDate, 
+            T.EndDate AS SalesTerritoryHistory_EndDate, 
+            T.rowguid AS SalesTerritoryHistory_rowguid, 
+            T.ModifiedDate AS SalesTerritoryHistory_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SalesTerritoryHistories AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Store"><![CDATA[
+    SELECT VALUE -- Constructing Store
+        [CodeFirstDatabaseSchema.Store](T1.Store_BusinessEntityID, T1.Store_Name, T1.Store_SalesPersonID, T1.Store_Demographics, T1.Store_rowguid, T1.Store_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Store_BusinessEntityID, 
+            T.Name AS Store_Name, 
+            T.SalesPersonID AS Store_SalesPersonID, 
+            T.Demographics AS Store_Demographics, 
+            T.rowguid AS Store_rowguid, 
+            T.ModifiedDate AS Store_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Stores AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.StateProvince"><![CDATA[
+    SELECT VALUE -- Constructing StateProvince
+        [CodeFirstDatabaseSchema.StateProvince](T1.StateProvince_StateProvinceID, T1.StateProvince_StateProvinceCode, T1.StateProvince_CountryRegionCode, T1.StateProvince_IsOnlyStateProvinceFlag, T1.StateProvince_Name, T1.StateProvince_TerritoryID, T1.StateProvince_rowguid, T1.StateProvince_ModifiedDate)
+    FROM (
+        SELECT 
+            T.StateProvinceID AS StateProvince_StateProvinceID, 
+            T.StateProvinceCode AS StateProvince_StateProvinceCode, 
+            T.CountryRegionCode AS StateProvince_CountryRegionCode, 
+            T.IsOnlyStateProvinceFlag AS StateProvince_IsOnlyStateProvinceFlag, 
+            T.Name AS StateProvince_Name, 
+            T.TerritoryID AS StateProvince_TerritoryID, 
+            T.rowguid AS StateProvince_rowguid, 
+            T.ModifiedDate AS StateProvince_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.StateProvinces AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SalesTaxRate"><![CDATA[
+    SELECT VALUE -- Constructing SalesTaxRate
+        [CodeFirstDatabaseSchema.SalesTaxRate](T1.SalesTaxRate_SalesTaxRateID, T1.SalesTaxRate_StateProvinceID, T1.SalesTaxRate_TaxType, T1.SalesTaxRate_TaxRate, T1.SalesTaxRate_Name, T1.SalesTaxRate_rowguid, T1.SalesTaxRate_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesTaxRateID AS SalesTaxRate_SalesTaxRateID, 
+            T.StateProvinceID AS SalesTaxRate_StateProvinceID, 
+            T.TaxType AS SalesTaxRate_TaxType, 
+            T.TaxRate AS SalesTaxRate_TaxRate, 
+            T.Name AS SalesTaxRate_Name, 
+            T.rowguid AS SalesTaxRate_rowguid, 
+            T.ModifiedDate AS SalesTaxRate_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SalesTaxRates AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SalesOrderHeaderSalesReason"><![CDATA[
+    SELECT VALUE -- Constructing SalesOrderHeaderSalesReason
+        [CodeFirstDatabaseSchema.SalesOrderHeaderSalesReason](T1.SalesOrderHeaderSalesReason_SalesOrderID, T1.SalesOrderHeaderSalesReason_SalesReasonID, T1.SalesOrderHeaderSalesReason_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesOrderID AS SalesOrderHeaderSalesReason_SalesOrderID, 
+            T.SalesReasonID AS SalesOrderHeaderSalesReason_SalesReasonID, 
+            T.ModifiedDate AS SalesOrderHeaderSalesReason_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SalesOrderHeaderSalesReasons AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.SalesReason"><![CDATA[
+    SELECT VALUE -- Constructing SalesReason
+        [CodeFirstDatabaseSchema.SalesReason](T1.SalesReason_SalesReasonID, T1.SalesReason_Name, T1.SalesReason_ReasonType, T1.SalesReason_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesReasonID AS SalesReason_SalesReasonID, 
+            T.Name AS SalesReason_Name, 
+            T.ReasonType AS SalesReason_ReasonType, 
+            T.ModifiedDate AS SalesReason_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.SalesReasons AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.EmailAddress"><![CDATA[
+    SELECT VALUE -- Constructing EmailAddress
+        [CodeFirstDatabaseSchema.EmailAddress](T1.EmailAddress_BusinessEntityID, T1.EmailAddress_EmailAddressID, T1.EmailAddress_EmailAddress, T1.EmailAddress_rowguid, T1.EmailAddress_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS EmailAddress_BusinessEntityID, 
+            T.EmailAddressID AS EmailAddress_EmailAddressID, 
+            T.EmailAddress1 AS EmailAddress_EmailAddress, 
+            T.rowguid AS EmailAddress_rowguid, 
+            T.ModifiedDate AS EmailAddress_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.EmailAddresses AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.Password"><![CDATA[
+    SELECT VALUE -- Constructing Password
+        [CodeFirstDatabaseSchema.Password](T1.Password_BusinessEntityID, T1.Password_PasswordHash, T1.Password_PasswordSalt, T1.Password_rowguid, T1.Password_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Password_BusinessEntityID, 
+            T.PasswordHash AS Password_PasswordHash, 
+            T.PasswordSalt AS Password_PasswordSalt, 
+            T.rowguid AS Password_rowguid, 
+            T.ModifiedDate AS Password_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.Passwords AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.PersonPhone"><![CDATA[
+    SELECT VALUE -- Constructing PersonPhone
+        [CodeFirstDatabaseSchema.PersonPhone](T1.PersonPhone_BusinessEntityID, T1.PersonPhone_PhoneNumber, T1.PersonPhone_PhoneNumberTypeID, T1.PersonPhone_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS PersonPhone_BusinessEntityID, 
+            T.PhoneNumber AS PersonPhone_PhoneNumber, 
+            T.PhoneNumberTypeID AS PersonPhone_PhoneNumberTypeID, 
+            T.ModifiedDate AS PersonPhone_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.PersonPhones AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.PhoneNumberType"><![CDATA[
+    SELECT VALUE -- Constructing PhoneNumberType
+        [CodeFirstDatabaseSchema.PhoneNumberType](T1.PhoneNumberType_PhoneNumberTypeID, T1.PhoneNumberType_Name, T1.PhoneNumberType_ModifiedDate)
+    FROM (
+        SELECT 
+            T.PhoneNumberTypeID AS PhoneNumberType_PhoneNumberTypeID, 
+            T.Name AS PhoneNumberType_Name, 
+            T.ModifiedDate AS PhoneNumberType_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.PhoneNumberTypes AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Addresses"><![CDATA[
+    SELECT VALUE -- Constructing Addresses
+        [POC.EF.Web.DAL.Address](T1.Address_AddressID, T1.Address_AddressLine1, T1.Address_AddressLine2, T1.Address_City, T1.Address_StateProvinceID, T1.Address_PostalCode, T1.Address_SpatialLocation, T1.Address_rowguid, T1.Address_ModifiedDate)
+    FROM (
+        SELECT 
+            T.AddressID AS Address_AddressID, 
+            T.AddressLine1 AS Address_AddressLine1, 
+            T.AddressLine2 AS Address_AddressLine2, 
+            T.City AS Address_City, 
+            T.StateProvinceID AS Address_StateProvinceID, 
+            T.PostalCode AS Address_PostalCode, 
+            T.SpatialLocation AS Address_SpatialLocation, 
+            T.rowguid AS Address_rowguid, 
+            T.ModifiedDate AS Address_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Address AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.BusinessEntityAddresses"><![CDATA[
+    SELECT VALUE -- Constructing BusinessEntityAddresses
+        [POC.EF.Web.DAL.BusinessEntityAddress](T1.BusinessEntityAddress_BusinessEntityID, T1.BusinessEntityAddress_AddressID, T1.BusinessEntityAddress_AddressTypeID, T1.BusinessEntityAddress_rowguid, T1.BusinessEntityAddress_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS BusinessEntityAddress_BusinessEntityID, 
+            T.AddressID AS BusinessEntityAddress_AddressID, 
+            T.AddressTypeID AS BusinessEntityAddress_AddressTypeID, 
+            T.rowguid AS BusinessEntityAddress_rowguid, 
+            T.ModifiedDate AS BusinessEntityAddress_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.BusinessEntityAddress AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.AddressTypes"><![CDATA[
+    SELECT VALUE -- Constructing AddressTypes
+        [POC.EF.Web.DAL.AddressType](T1.AddressType_AddressTypeID, T1.AddressType_Name, T1.AddressType_rowguid, T1.AddressType_ModifiedDate)
+    FROM (
+        SELECT 
+            T.AddressTypeID AS AddressType_AddressTypeID, 
+            T.Name AS AddressType_Name, 
+            T.rowguid AS AddressType_rowguid, 
+            T.ModifiedDate AS AddressType_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.AddressType AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.BusinessEntities"><![CDATA[
+    SELECT VALUE -- Constructing BusinessEntities
+        [POC.EF.Web.DAL.BusinessEntity](T1.BusinessEntity_BusinessEntityID, T1.BusinessEntity_rowguid, T1.BusinessEntity_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS BusinessEntity_BusinessEntityID, 
+            T.rowguid AS BusinessEntity_rowguid, 
+            T.ModifiedDate AS BusinessEntity_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.BusinessEntity AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.BusinessEntityContacts"><![CDATA[
+    SELECT VALUE -- Constructing BusinessEntityContacts
+        [POC.EF.Web.DAL.BusinessEntityContact](T1.BusinessEntityContact_BusinessEntityID, T1.BusinessEntityContact_PersonID, T1.BusinessEntityContact_ContactTypeID, T1.BusinessEntityContact_rowguid, T1.BusinessEntityContact_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS BusinessEntityContact_BusinessEntityID, 
+            T.PersonID AS BusinessEntityContact_PersonID, 
+            T.ContactTypeID AS BusinessEntityContact_ContactTypeID, 
+            T.rowguid AS BusinessEntityContact_rowguid, 
+            T.ModifiedDate AS BusinessEntityContact_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.BusinessEntityContact AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ContactTypes"><![CDATA[
+    SELECT VALUE -- Constructing ContactTypes
+        [POC.EF.Web.DAL.ContactType](T1.ContactType_ContactTypeID, T1.ContactType_Name, T1.ContactType_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ContactTypeID AS ContactType_ContactTypeID, 
+            T.Name AS ContactType_Name, 
+            T.ModifiedDate AS ContactType_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ContactType AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.People"><![CDATA[
+    SELECT VALUE -- Constructing People
+        [POC.EF.Web.DAL.Person](T1.Person_BusinessEntityID, T1.Person_PersonType, T1.Person_NameStyle, T1.Person_Title, T1.Person_FirstName, T1.Person_MiddleName, T1.Person_LastName, T1.Person_Suffix, T1.Person_EmailPromotion, T1.Person_AdditionalContactInfo, T1.Person_Demographics, T1.Person_rowguid, T1.Person_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Person_BusinessEntityID, 
+            T.PersonType AS Person_PersonType, 
+            T.NameStyle AS Person_NameStyle, 
+            T.Title AS Person_Title, 
+            T.FirstName AS Person_FirstName, 
+            T.MiddleName AS Person_MiddleName, 
+            T.LastName AS Person_LastName, 
+            T.Suffix AS Person_Suffix, 
+            T.EmailPromotion AS Person_EmailPromotion, 
+            T.AdditionalContactInfo AS Person_AdditionalContactInfo, 
+            T.Demographics AS Person_Demographics, 
+            T.rowguid AS Person_rowguid, 
+            T.ModifiedDate AS Person_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Person AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Customers"><![CDATA[
+    SELECT VALUE -- Constructing Customers
+        [POC.EF.Web.DAL.Customer](T1.Customer_CustomerID, T1.Customer_PersonID, T1.Customer_StoreID, T1.Customer_TerritoryID, T1.Customer_AccountNumber, T1.Customer_rowguid, T1.Customer_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CustomerID AS Customer_CustomerID, 
+            T.PersonID AS Customer_PersonID, 
+            T.StoreID AS Customer_StoreID, 
+            T.TerritoryID AS Customer_TerritoryID, 
+            T.AccountNumber AS Customer_AccountNumber, 
+            T.rowguid AS Customer_rowguid, 
+            T.ModifiedDate AS Customer_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Customer AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SalesOrderHeaders"><![CDATA[
+    SELECT VALUE -- Constructing SalesOrderHeaders
+        [POC.EF.Web.DAL.SalesOrderHeader](T1.SalesOrderHeader_SalesOrderID, T1.SalesOrderHeader_RevisionNumber, T1.SalesOrderHeader_OrderDate, T1.SalesOrderHeader_DueDate, T1.SalesOrderHeader_ShipDate, T1.SalesOrderHeader_Status, T1.SalesOrderHeader_OnlineOrderFlag, T1.SalesOrderHeader_SalesOrderNumber, T1.SalesOrderHeader_PurchaseOrderNumber, T1.SalesOrderHeader_AccountNumber, T1.SalesOrderHeader_CustomerID, T1.SalesOrderHeader_SalesPersonID, T1.SalesOrderHeader_TerritoryID, T1.SalesOrderHeader_BillToAddressID, T1.SalesOrderHeader_ShipToAddressID, T1.SalesOrderHeader_ShipMethodID, T1.SalesOrderHeader_CreditCardID, T1.SalesOrderHeader_CreditCardApprovalCode, T1.SalesOrderHeader_CurrencyRateID, T1.SalesOrderHeader_SubTotal, T1.SalesOrderHeader_TaxAmt, T1.SalesOrderHeader_Freight, T1.SalesOrderHeader_TotalDue, T1.SalesOrderHeader_Comment, T1.SalesOrderHeader_rowguid, T1.SalesOrderHeader_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesOrderID AS SalesOrderHeader_SalesOrderID, 
+            T.RevisionNumber AS SalesOrderHeader_RevisionNumber, 
+            T.OrderDate AS SalesOrderHeader_OrderDate, 
+            T.DueDate AS SalesOrderHeader_DueDate, 
+            T.ShipDate AS SalesOrderHeader_ShipDate, 
+            T.Status AS SalesOrderHeader_Status, 
+            T.OnlineOrderFlag AS SalesOrderHeader_OnlineOrderFlag, 
+            T.SalesOrderNumber AS SalesOrderHeader_SalesOrderNumber, 
+            T.PurchaseOrderNumber AS SalesOrderHeader_PurchaseOrderNumber, 
+            T.AccountNumber AS SalesOrderHeader_AccountNumber, 
+            T.CustomerID AS SalesOrderHeader_CustomerID, 
+            T.SalesPersonID AS SalesOrderHeader_SalesPersonID, 
+            T.TerritoryID AS SalesOrderHeader_TerritoryID, 
+            T.BillToAddressID AS SalesOrderHeader_BillToAddressID, 
+            T.ShipToAddressID AS SalesOrderHeader_ShipToAddressID, 
+            T.ShipMethodID AS SalesOrderHeader_ShipMethodID, 
+            T.CreditCardID AS SalesOrderHeader_CreditCardID, 
+            T.CreditCardApprovalCode AS SalesOrderHeader_CreditCardApprovalCode, 
+            T.CurrencyRateID AS SalesOrderHeader_CurrencyRateID, 
+            T.SubTotal AS SalesOrderHeader_SubTotal, 
+            T.TaxAmt AS SalesOrderHeader_TaxAmt, 
+            T.Freight AS SalesOrderHeader_Freight, 
+            T.TotalDue AS SalesOrderHeader_TotalDue, 
+            T.Comment AS SalesOrderHeader_Comment, 
+            T.rowguid AS SalesOrderHeader_rowguid, 
+            T.ModifiedDate AS SalesOrderHeader_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SalesOrderHeader AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.CreditCards"><![CDATA[
+    SELECT VALUE -- Constructing CreditCards
+        [POC.EF.Web.DAL.CreditCard](T1.CreditCard_CreditCardID, T1.CreditCard_CardType, T1.CreditCard_CardNumber, T1.CreditCard_ExpMonth, T1.CreditCard_ExpYear, T1.CreditCard_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CreditCardID AS CreditCard_CreditCardID, 
+            T.CardType AS CreditCard_CardType, 
+            T.CardNumber AS CreditCard_CardNumber, 
+            T.ExpMonth AS CreditCard_ExpMonth, 
+            T.ExpYear AS CreditCard_ExpYear, 
+            T.ModifiedDate AS CreditCard_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.CreditCard AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.PersonCreditCards"><![CDATA[
+    SELECT VALUE -- Constructing PersonCreditCards
+        [POC.EF.Web.DAL.PersonCreditCard](T1.PersonCreditCard_BusinessEntityID, T1.PersonCreditCard_CreditCardID, T1.PersonCreditCard_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS PersonCreditCard_BusinessEntityID, 
+            T.CreditCardID AS PersonCreditCard_CreditCardID, 
+            T.ModifiedDate AS PersonCreditCard_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.PersonCreditCard AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.CurrencyRates"><![CDATA[
+    SELECT VALUE -- Constructing CurrencyRates
+        [POC.EF.Web.DAL.CurrencyRate](T1.CurrencyRate_CurrencyRateID, T1.CurrencyRate_CurrencyRateDate, T1.CurrencyRate_FromCurrencyCode, T1.CurrencyRate_ToCurrencyCode, T1.CurrencyRate_AverageRate, T1.CurrencyRate_EndOfDayRate, T1.CurrencyRate_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CurrencyRateID AS CurrencyRate_CurrencyRateID, 
+            T.CurrencyRateDate AS CurrencyRate_CurrencyRateDate, 
+            T.FromCurrencyCode AS CurrencyRate_FromCurrencyCode, 
+            T.ToCurrencyCode AS CurrencyRate_ToCurrencyCode, 
+            T.AverageRate AS CurrencyRate_AverageRate, 
+            T.EndOfDayRate AS CurrencyRate_EndOfDayRate, 
+            T.ModifiedDate AS CurrencyRate_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.CurrencyRate AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Currencies"><![CDATA[
+    SELECT VALUE -- Constructing Currencies
+        [POC.EF.Web.DAL.Currency](T1.Currency_CurrencyCode, T1.Currency_Name, T1.Currency_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CurrencyCode AS Currency_CurrencyCode, 
+            T.Name AS Currency_Name, 
+            T.ModifiedDate AS Currency_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Currency AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.CountryRegionCurrencies"><![CDATA[
+    SELECT VALUE -- Constructing CountryRegionCurrencies
+        [POC.EF.Web.DAL.CountryRegionCurrency](T1.CountryRegionCurrency_CountryRegionCode, T1.CountryRegionCurrency_CurrencyCode, T1.CountryRegionCurrency_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CountryRegionCode AS CountryRegionCurrency_CountryRegionCode, 
+            T.CurrencyCode AS CountryRegionCurrency_CurrencyCode, 
+            T.ModifiedDate AS CountryRegionCurrency_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.CountryRegionCurrency AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.CountryRegions"><![CDATA[
+    SELECT VALUE -- Constructing CountryRegions
+        [POC.EF.Web.DAL.CountryRegion](T1.CountryRegion_CountryRegionCode, T1.CountryRegion_Name, T1.CountryRegion_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CountryRegionCode AS CountryRegion_CountryRegionCode, 
+            T.Name AS CountryRegion_Name, 
+            T.ModifiedDate AS CountryRegion_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.CountryRegion AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SalesTerritories"><![CDATA[
+    SELECT VALUE -- Constructing SalesTerritories
+        [POC.EF.Web.DAL.SalesTerritory](T1.SalesTerritory_TerritoryID, T1.SalesTerritory_Name, T1.SalesTerritory_CountryRegionCode, T1.SalesTerritory_Group, T1.SalesTerritory_SalesYTD, T1.SalesTerritory_SalesLastYear, T1.SalesTerritory_CostYTD, T1.SalesTerritory_CostLastYear, T1.SalesTerritory_rowguid, T1.SalesTerritory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.TerritoryID AS SalesTerritory_TerritoryID, 
+            T.Name AS SalesTerritory_Name, 
+            T.CountryRegionCode AS SalesTerritory_CountryRegionCode, 
+            T.[Group] AS SalesTerritory_Group, 
+            T.SalesYTD AS SalesTerritory_SalesYTD, 
+            T.SalesLastYear AS SalesTerritory_SalesLastYear, 
+            T.CostYTD AS SalesTerritory_CostYTD, 
+            T.CostLastYear AS SalesTerritory_CostLastYear, 
+            T.rowguid AS SalesTerritory_rowguid, 
+            T.ModifiedDate AS SalesTerritory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SalesTerritory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SalesPersons"><![CDATA[
+    SELECT VALUE -- Constructing SalesPersons
+        [POC.EF.Web.DAL.SalesPerson](T1.SalesPerson_BusinessEntityID, T1.SalesPerson_TerritoryID, T1.SalesPerson_SalesQuota, T1.SalesPerson_Bonus, T1.SalesPerson_CommissionPct, T1.SalesPerson_SalesYTD, T1.SalesPerson_SalesLastYear, T1.SalesPerson_rowguid, T1.SalesPerson_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS SalesPerson_BusinessEntityID, 
+            T.TerritoryID AS SalesPerson_TerritoryID, 
+            T.SalesQuota AS SalesPerson_SalesQuota, 
+            T.Bonus AS SalesPerson_Bonus, 
+            T.CommissionPct AS SalesPerson_CommissionPct, 
+            T.SalesYTD AS SalesPerson_SalesYTD, 
+            T.SalesLastYear AS SalesPerson_SalesLastYear, 
+            T.rowguid AS SalesPerson_rowguid, 
+            T.ModifiedDate AS SalesPerson_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SalesPerson AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Employees"><![CDATA[
+    SELECT VALUE -- Constructing Employees
+        [POC.EF.Web.DAL.Employee](T1.Employee_BusinessEntityID, T1.Employee_NationalIDNumber, T1.Employee_LoginID, T1.Employee_OrganizationLevel, T1.Employee_JobTitle, T1.Employee_BirthDate, T1.Employee_MaritalStatus, T1.Employee_Gender, T1.Employee_HireDate, T1.Employee_SalariedFlag, T1.Employee_VacationHours, T1.Employee_SickLeaveHours, T1.Employee_CurrentFlag, T1.Employee_rowguid, T1.Employee_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Employee_BusinessEntityID, 
+            T.NationalIDNumber AS Employee_NationalIDNumber, 
+            T.LoginID AS Employee_LoginID, 
+            T.OrganizationLevel AS Employee_OrganizationLevel, 
+            T.JobTitle AS Employee_JobTitle, 
+            T.BirthDate AS Employee_BirthDate, 
+            T.MaritalStatus AS Employee_MaritalStatus, 
+            T.Gender AS Employee_Gender, 
+            T.HireDate AS Employee_HireDate, 
+            T.SalariedFlag AS Employee_SalariedFlag, 
+            T.VacationHours AS Employee_VacationHours, 
+            T.SickLeaveHours AS Employee_SickLeaveHours, 
+            T.CurrentFlag AS Employee_CurrentFlag, 
+            T.rowguid AS Employee_rowguid, 
+            T.ModifiedDate AS Employee_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Employee AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.EmployeeDepartmentHistories"><![CDATA[
+    SELECT VALUE -- Constructing EmployeeDepartmentHistories
+        [POC.EF.Web.DAL.EmployeeDepartmentHistory](T1.EmployeeDepartmentHistory_BusinessEntityID, T1.EmployeeDepartmentHistory_DepartmentID, T1.EmployeeDepartmentHistory_ShiftID, T1.EmployeeDepartmentHistory_StartDate, T1.EmployeeDepartmentHistory_EndDate, T1.EmployeeDepartmentHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS EmployeeDepartmentHistory_BusinessEntityID, 
+            T.DepartmentID AS EmployeeDepartmentHistory_DepartmentID, 
+            T.ShiftID AS EmployeeDepartmentHistory_ShiftID, 
+            T.StartDate AS EmployeeDepartmentHistory_StartDate, 
+            T.EndDate AS EmployeeDepartmentHistory_EndDate, 
+            T.ModifiedDate AS EmployeeDepartmentHistory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.EmployeeDepartmentHistory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Departments"><![CDATA[
+    SELECT VALUE -- Constructing Departments
+        [POC.EF.Web.DAL.Department](T1.Department_DepartmentID, T1.Department_Name, T1.Department_GroupName, T1.Department_ModifiedDate)
+    FROM (
+        SELECT 
+            T.DepartmentID AS Department_DepartmentID, 
+            T.Name AS Department_Name, 
+            T.GroupName AS Department_GroupName, 
+            T.ModifiedDate AS Department_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Department AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Shifts"><![CDATA[
+    SELECT VALUE -- Constructing Shifts
+        [POC.EF.Web.DAL.Shift](T1.Shift_ShiftID, T1.Shift_Name, T1.Shift_StartTime, T1.Shift_EndTime, T1.Shift_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ShiftID AS Shift_ShiftID, 
+            T.Name AS Shift_Name, 
+            T.StartTime AS Shift_StartTime, 
+            T.EndTime AS Shift_EndTime, 
+            T.ModifiedDate AS Shift_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Shift AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.EmployeePayHistories"><![CDATA[
+    SELECT VALUE -- Constructing EmployeePayHistories
+        [POC.EF.Web.DAL.EmployeePayHistory](T1.EmployeePayHistory_BusinessEntityID, T1.EmployeePayHistory_RateChangeDate, T1.EmployeePayHistory_Rate, T1.EmployeePayHistory_PayFrequency, T1.EmployeePayHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS EmployeePayHistory_BusinessEntityID, 
+            T.RateChangeDate AS EmployeePayHistory_RateChangeDate, 
+            T.Rate AS EmployeePayHistory_Rate, 
+            T.PayFrequency AS EmployeePayHistory_PayFrequency, 
+            T.ModifiedDate AS EmployeePayHistory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.EmployeePayHistory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.JobCandidates"><![CDATA[
+    SELECT VALUE -- Constructing JobCandidates
+        [POC.EF.Web.DAL.JobCandidate](T1.JobCandidate_JobCandidateID, T1.JobCandidate_BusinessEntityID, T1.JobCandidate_Resume, T1.JobCandidate_ModifiedDate)
+    FROM (
+        SELECT 
+            T.JobCandidateID AS JobCandidate_JobCandidateID, 
+            T.BusinessEntityID AS JobCandidate_BusinessEntityID, 
+            T.Resume AS JobCandidate_Resume, 
+            T.ModifiedDate AS JobCandidate_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.JobCandidate AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.PurchaseOrderHeaders"><![CDATA[
+    SELECT VALUE -- Constructing PurchaseOrderHeaders
+        [POC.EF.Web.DAL.PurchaseOrderHeader](T1.PurchaseOrderHeader_PurchaseOrderID, T1.PurchaseOrderHeader_RevisionNumber, T1.PurchaseOrderHeader_Status, T1.PurchaseOrderHeader_EmployeeID, T1.PurchaseOrderHeader_VendorID, T1.PurchaseOrderHeader_ShipMethodID, T1.PurchaseOrderHeader_OrderDate, T1.PurchaseOrderHeader_ShipDate, T1.PurchaseOrderHeader_SubTotal, T1.PurchaseOrderHeader_TaxAmt, T1.PurchaseOrderHeader_Freight, T1.PurchaseOrderHeader_TotalDue, T1.PurchaseOrderHeader_ModifiedDate)
+    FROM (
+        SELECT 
+            T.PurchaseOrderID AS PurchaseOrderHeader_PurchaseOrderID, 
+            T.RevisionNumber AS PurchaseOrderHeader_RevisionNumber, 
+            T.Status AS PurchaseOrderHeader_Status, 
+            T.EmployeeID AS PurchaseOrderHeader_EmployeeID, 
+            T.VendorID AS PurchaseOrderHeader_VendorID, 
+            T.ShipMethodID AS PurchaseOrderHeader_ShipMethodID, 
+            T.OrderDate AS PurchaseOrderHeader_OrderDate, 
+            T.ShipDate AS PurchaseOrderHeader_ShipDate, 
+            T.SubTotal AS PurchaseOrderHeader_SubTotal, 
+            T.TaxAmt AS PurchaseOrderHeader_TaxAmt, 
+            T.Freight AS PurchaseOrderHeader_Freight, 
+            T.TotalDue AS PurchaseOrderHeader_TotalDue, 
+            T.ModifiedDate AS PurchaseOrderHeader_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.PurchaseOrderHeader AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.PurchaseOrderDetails"><![CDATA[
+    SELECT VALUE -- Constructing PurchaseOrderDetails
+        [POC.EF.Web.DAL.PurchaseOrderDetail](T1.PurchaseOrderDetail_PurchaseOrderID, T1.PurchaseOrderDetail_PurchaseOrderDetailID, T1.PurchaseOrderDetail_DueDate, T1.PurchaseOrderDetail_OrderQty, T1.PurchaseOrderDetail_ProductID, T1.PurchaseOrderDetail_UnitPrice, T1.PurchaseOrderDetail_LineTotal, T1.PurchaseOrderDetail_ReceivedQty, T1.PurchaseOrderDetail_RejectedQty, T1.PurchaseOrderDetail_StockedQty, T1.PurchaseOrderDetail_ModifiedDate)
+    FROM (
+        SELECT 
+            T.PurchaseOrderID AS PurchaseOrderDetail_PurchaseOrderID, 
+            T.PurchaseOrderDetailID AS PurchaseOrderDetail_PurchaseOrderDetailID, 
+            T.DueDate AS PurchaseOrderDetail_DueDate, 
+            T.OrderQty AS PurchaseOrderDetail_OrderQty, 
+            T.ProductID AS PurchaseOrderDetail_ProductID, 
+            T.UnitPrice AS PurchaseOrderDetail_UnitPrice, 
+            T.LineTotal AS PurchaseOrderDetail_LineTotal, 
+            T.ReceivedQty AS PurchaseOrderDetail_ReceivedQty, 
+            T.RejectedQty AS PurchaseOrderDetail_RejectedQty, 
+            T.StockedQty AS PurchaseOrderDetail_StockedQty, 
+            T.ModifiedDate AS PurchaseOrderDetail_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.PurchaseOrderDetail AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Products"><![CDATA[
+    SELECT VALUE -- Constructing Products
+        [POC.EF.Web.DAL.Product](T1.Product_ProductID, T1.Product_Name, T1.Product_ProductNumber, T1.Product_MakeFlag, T1.Product_FinishedGoodsFlag, T1.Product_Color, T1.Product_SafetyStockLevel, T1.Product_ReorderPoint, T1.Product_StandardCost, T1.Product_ListPrice, T1.Product_Size, T1.Product_SizeUnitMeasureCode, T1.Product_WeightUnitMeasureCode, T1.Product_Weight, T1.Product_DaysToManufacture, T1.Product_ProductLine, T1.Product_Class, T1.Product_Style, T1.Product_ProductSubcategoryID, T1.Product_ProductModelID, T1.Product_SellStartDate, T1.Product_SellEndDate, T1.Product_DiscontinuedDate, T1.Product_rowguid, T1.Product_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS Product_ProductID, 
+            T.Name AS Product_Name, 
+            T.ProductNumber AS Product_ProductNumber, 
+            T.MakeFlag AS Product_MakeFlag, 
+            T.FinishedGoodsFlag AS Product_FinishedGoodsFlag, 
+            T.Color AS Product_Color, 
+            T.SafetyStockLevel AS Product_SafetyStockLevel, 
+            T.ReorderPoint AS Product_ReorderPoint, 
+            T.StandardCost AS Product_StandardCost, 
+            T.ListPrice AS Product_ListPrice, 
+            T.Size AS Product_Size, 
+            T.SizeUnitMeasureCode AS Product_SizeUnitMeasureCode, 
+            T.WeightUnitMeasureCode AS Product_WeightUnitMeasureCode, 
+            T.Weight AS Product_Weight, 
+            T.DaysToManufacture AS Product_DaysToManufacture, 
+            T.ProductLine AS Product_ProductLine, 
+            T.Class AS Product_Class, 
+            T.Style AS Product_Style, 
+            T.ProductSubcategoryID AS Product_ProductSubcategoryID, 
+            T.ProductModelID AS Product_ProductModelID, 
+            T.SellStartDate AS Product_SellStartDate, 
+            T.SellEndDate AS Product_SellEndDate, 
+            T.DiscontinuedDate AS Product_DiscontinuedDate, 
+            T.rowguid AS Product_rowguid, 
+            T.ModifiedDate AS Product_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Product AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.BillOfMaterials"><![CDATA[
+    SELECT VALUE -- Constructing BillOfMaterials
+        [POC.EF.Web.DAL.BillOfMaterial](T1.BillOfMaterial_BillOfMaterialsID, T1.BillOfMaterial_ProductAssemblyID, T1.BillOfMaterial_ComponentID, T1.BillOfMaterial_StartDate, T1.BillOfMaterial_EndDate, T1.BillOfMaterial_UnitMeasureCode, T1.BillOfMaterial_BOMLevel, T1.BillOfMaterial_PerAssemblyQty, T1.BillOfMaterial_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BillOfMaterialsID AS BillOfMaterial_BillOfMaterialsID, 
+            T.ProductAssemblyID AS BillOfMaterial_ProductAssemblyID, 
+            T.ComponentID AS BillOfMaterial_ComponentID, 
+            T.StartDate AS BillOfMaterial_StartDate, 
+            T.EndDate AS BillOfMaterial_EndDate, 
+            T.UnitMeasureCode AS BillOfMaterial_UnitMeasureCode, 
+            T.BOMLevel AS BillOfMaterial_BOMLevel, 
+            T.PerAssemblyQty AS BillOfMaterial_PerAssemblyQty, 
+            T.ModifiedDate AS BillOfMaterial_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.BillOfMaterial AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.UnitMeasures"><![CDATA[
+    SELECT VALUE -- Constructing UnitMeasures
+        [POC.EF.Web.DAL.UnitMeasure](T1.UnitMeasure_UnitMeasureCode, T1.UnitMeasure_Name, T1.UnitMeasure_ModifiedDate)
+    FROM (
+        SELECT 
+            T.UnitMeasureCode AS UnitMeasure_UnitMeasureCode, 
+            T.Name AS UnitMeasure_Name, 
+            T.ModifiedDate AS UnitMeasure_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.UnitMeasure AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductVendors"><![CDATA[
+    SELECT VALUE -- Constructing ProductVendors
+        [POC.EF.Web.DAL.ProductVendor](T1.ProductVendor_ProductID, T1.ProductVendor_BusinessEntityID, T1.ProductVendor_AverageLeadTime, T1.ProductVendor_StandardPrice, T1.ProductVendor_LastReceiptCost, T1.ProductVendor_LastReceiptDate, T1.ProductVendor_MinOrderQty, T1.ProductVendor_MaxOrderQty, T1.ProductVendor_OnOrderQty, T1.ProductVendor_UnitMeasureCode, T1.ProductVendor_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductVendor_ProductID, 
+            T.BusinessEntityID AS ProductVendor_BusinessEntityID, 
+            T.AverageLeadTime AS ProductVendor_AverageLeadTime, 
+            T.StandardPrice AS ProductVendor_StandardPrice, 
+            T.LastReceiptCost AS ProductVendor_LastReceiptCost, 
+            T.LastReceiptDate AS ProductVendor_LastReceiptDate, 
+            T.MinOrderQty AS ProductVendor_MinOrderQty, 
+            T.MaxOrderQty AS ProductVendor_MaxOrderQty, 
+            T.OnOrderQty AS ProductVendor_OnOrderQty, 
+            T.UnitMeasureCode AS ProductVendor_UnitMeasureCode, 
+            T.ModifiedDate AS ProductVendor_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductVendor AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Vendors"><![CDATA[
+    SELECT VALUE -- Constructing Vendors
+        [POC.EF.Web.DAL.Vendor](T1.Vendor_BusinessEntityID, T1.Vendor_AccountNumber, T1.Vendor_Name, T1.Vendor_CreditRating, T1.Vendor_PreferredVendorStatus, T1.Vendor_ActiveFlag, T1.Vendor_PurchasingWebServiceURL, T1.Vendor_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Vendor_BusinessEntityID, 
+            T.AccountNumber AS Vendor_AccountNumber, 
+            T.Name AS Vendor_Name, 
+            T.CreditRating AS Vendor_CreditRating, 
+            T.PreferredVendorStatus AS Vendor_PreferredVendorStatus, 
+            T.ActiveFlag AS Vendor_ActiveFlag, 
+            T.PurchasingWebServiceURL AS Vendor_PurchasingWebServiceURL, 
+            T.ModifiedDate AS Vendor_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Vendor AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductCostHistories"><![CDATA[
+    SELECT VALUE -- Constructing ProductCostHistories
+        [POC.EF.Web.DAL.ProductCostHistory](T1.ProductCostHistory_ProductID, T1.ProductCostHistory_StartDate, T1.ProductCostHistory_EndDate, T1.ProductCostHistory_StandardCost, T1.ProductCostHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductCostHistory_ProductID, 
+            T.StartDate AS ProductCostHistory_StartDate, 
+            T.EndDate AS ProductCostHistory_EndDate, 
+            T.StandardCost AS ProductCostHistory_StandardCost, 
+            T.ModifiedDate AS ProductCostHistory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductCostHistory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductDocuments"><![CDATA[
+    SELECT VALUE -- Constructing ProductDocuments
+        [POC.EF.Web.DAL.ProductDocument](T1.ProductDocument_ProductID, T1.ProductDocument_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductDocument_ProductID, 
+            T.ModifiedDate AS ProductDocument_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductDocument AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductInventories"><![CDATA[
+    SELECT VALUE -- Constructing ProductInventories
+        [POC.EF.Web.DAL.ProductInventory](T1.ProductInventory_ProductID, T1.ProductInventory_LocationID, T1.ProductInventory_Shelf, T1.ProductInventory_Bin, T1.ProductInventory_Quantity, T1.ProductInventory_rowguid, T1.ProductInventory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductInventory_ProductID, 
+            T.LocationID AS ProductInventory_LocationID, 
+            T.Shelf AS ProductInventory_Shelf, 
+            T.Bin AS ProductInventory_Bin, 
+            T.Quantity AS ProductInventory_Quantity, 
+            T.rowguid AS ProductInventory_rowguid, 
+            T.ModifiedDate AS ProductInventory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductInventory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Locations"><![CDATA[
+    SELECT VALUE -- Constructing Locations
+        [POC.EF.Web.DAL.Location](T1.Location_LocationID, T1.Location_Name, T1.Location_CostRate, T1.Location_Availability, T1.Location_ModifiedDate)
+    FROM (
+        SELECT 
+            T.LocationID AS Location_LocationID, 
+            T.Name AS Location_Name, 
+            T.CostRate AS Location_CostRate, 
+            T.Availability AS Location_Availability, 
+            T.ModifiedDate AS Location_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Location AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.WorkOrderRoutings"><![CDATA[
+    SELECT VALUE -- Constructing WorkOrderRoutings
+        [POC.EF.Web.DAL.WorkOrderRouting](T1.WorkOrderRouting_WorkOrderID, T1.WorkOrderRouting_ProductID, T1.WorkOrderRouting_OperationSequence, T1.WorkOrderRouting_LocationID, T1.WorkOrderRouting_ScheduledStartDate, T1.WorkOrderRouting_ScheduledEndDate, T1.WorkOrderRouting_ActualStartDate, T1.WorkOrderRouting_ActualEndDate, T1.WorkOrderRouting_ActualResourceHrs, T1.WorkOrderRouting_PlannedCost, T1.WorkOrderRouting_ActualCost, T1.WorkOrderRouting_ModifiedDate)
+    FROM (
+        SELECT 
+            T.WorkOrderID AS WorkOrderRouting_WorkOrderID, 
+            T.ProductID AS WorkOrderRouting_ProductID, 
+            T.OperationSequence AS WorkOrderRouting_OperationSequence, 
+            T.LocationID AS WorkOrderRouting_LocationID, 
+            T.ScheduledStartDate AS WorkOrderRouting_ScheduledStartDate, 
+            T.ScheduledEndDate AS WorkOrderRouting_ScheduledEndDate, 
+            T.ActualStartDate AS WorkOrderRouting_ActualStartDate, 
+            T.ActualEndDate AS WorkOrderRouting_ActualEndDate, 
+            T.ActualResourceHrs AS WorkOrderRouting_ActualResourceHrs, 
+            T.PlannedCost AS WorkOrderRouting_PlannedCost, 
+            T.ActualCost AS WorkOrderRouting_ActualCost, 
+            T.ModifiedDate AS WorkOrderRouting_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.WorkOrderRouting AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.WorkOrders"><![CDATA[
+    SELECT VALUE -- Constructing WorkOrders
+        [POC.EF.Web.DAL.WorkOrder](T1.WorkOrder_WorkOrderID, T1.WorkOrder_ProductID, T1.WorkOrder_OrderQty, T1.WorkOrder_StockedQty, T1.WorkOrder_ScrappedQty, T1.WorkOrder_StartDate, T1.WorkOrder_EndDate, T1.WorkOrder_DueDate, T1.WorkOrder_ScrapReasonID, T1.WorkOrder_ModifiedDate)
+    FROM (
+        SELECT 
+            T.WorkOrderID AS WorkOrder_WorkOrderID, 
+            T.ProductID AS WorkOrder_ProductID, 
+            T.OrderQty AS WorkOrder_OrderQty, 
+            T.StockedQty AS WorkOrder_StockedQty, 
+            T.ScrappedQty AS WorkOrder_ScrappedQty, 
+            T.StartDate AS WorkOrder_StartDate, 
+            T.EndDate AS WorkOrder_EndDate, 
+            T.DueDate AS WorkOrder_DueDate, 
+            T.ScrapReasonID AS WorkOrder_ScrapReasonID, 
+            T.ModifiedDate AS WorkOrder_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.WorkOrder AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ScrapReasons"><![CDATA[
+    SELECT VALUE -- Constructing ScrapReasons
+        [POC.EF.Web.DAL.ScrapReason](T1.ScrapReason_ScrapReasonID, T1.ScrapReason_Name, T1.ScrapReason_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ScrapReasonID AS ScrapReason_ScrapReasonID, 
+            T.Name AS ScrapReason_Name, 
+            T.ModifiedDate AS ScrapReason_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ScrapReason AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductListPriceHistories"><![CDATA[
+    SELECT VALUE -- Constructing ProductListPriceHistories
+        [POC.EF.Web.DAL.ProductListPriceHistory](T1.ProductListPriceHistory_ProductID, T1.ProductListPriceHistory_StartDate, T1.ProductListPriceHistory_EndDate, T1.ProductListPriceHistory_ListPrice, T1.ProductListPriceHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductListPriceHistory_ProductID, 
+            T.StartDate AS ProductListPriceHistory_StartDate, 
+            T.EndDate AS ProductListPriceHistory_EndDate, 
+            T.ListPrice AS ProductListPriceHistory_ListPrice, 
+            T.ModifiedDate AS ProductListPriceHistory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductListPriceHistory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductModels"><![CDATA[
+    SELECT VALUE -- Constructing ProductModels
+        [POC.EF.Web.DAL.ProductModel](T1.ProductModel_ProductModelID, T1.ProductModel_Name, T1.ProductModel_CatalogDescription, T1.ProductModel_Instructions, T1.ProductModel_rowguid, T1.ProductModel_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductModelID AS ProductModel_ProductModelID, 
+            T.Name AS ProductModel_Name, 
+            T.CatalogDescription AS ProductModel_CatalogDescription, 
+            T.Instructions AS ProductModel_Instructions, 
+            T.rowguid AS ProductModel_rowguid, 
+            T.ModifiedDate AS ProductModel_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductModel AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductModelIllustrations"><![CDATA[
+    SELECT VALUE -- Constructing ProductModelIllustrations
+        [POC.EF.Web.DAL.ProductModelIllustration](T1.ProductModelIllustration_ProductModelID, T1.ProductModelIllustration_IllustrationID, T1.ProductModelIllustration_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductModelID AS ProductModelIllustration_ProductModelID, 
+            T.IllustrationID AS ProductModelIllustration_IllustrationID, 
+            T.ModifiedDate AS ProductModelIllustration_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductModelIllustration AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Illustrations"><![CDATA[
+    SELECT VALUE -- Constructing Illustrations
+        [POC.EF.Web.DAL.Illustration](T1.Illustration_IllustrationID, T1.Illustration_Diagram, T1.Illustration_ModifiedDate)
+    FROM (
+        SELECT 
+            T.IllustrationID AS Illustration_IllustrationID, 
+            T.Diagram AS Illustration_Diagram, 
+            T.ModifiedDate AS Illustration_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Illustration AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductModelProductDescriptionCultures"><![CDATA[
+    SELECT VALUE -- Constructing ProductModelProductDescriptionCultures
+        [POC.EF.Web.DAL.ProductModelProductDescriptionCulture](T1.ProductModelProductDescriptionCulture_ProductModelID, T1.ProductModelProductDescriptionCulture_ProductDescriptionID, T1.ProductModelProductDescriptionCulture_CultureID, T1.ProductModelProductDescriptionCulture_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductModelID AS ProductModelProductDescriptionCulture_ProductModelID, 
+            T.ProductDescriptionID AS ProductModelProductDescriptionCulture_ProductDescriptionID, 
+            T.CultureID AS ProductModelProductDescriptionCulture_CultureID, 
+            T.ModifiedDate AS ProductModelProductDescriptionCulture_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductModelProductDescriptionCulture AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Cultures"><![CDATA[
+    SELECT VALUE -- Constructing Cultures
+        [POC.EF.Web.DAL.Culture](T1.Culture_CultureID, T1.Culture_Name, T1.Culture_ModifiedDate)
+    FROM (
+        SELECT 
+            T.CultureID AS Culture_CultureID, 
+            T.Name AS Culture_Name, 
+            T.ModifiedDate AS Culture_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Culture AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductDescriptions"><![CDATA[
+    SELECT VALUE -- Constructing ProductDescriptions
+        [POC.EF.Web.DAL.ProductDescription](T1.ProductDescription_ProductDescriptionID, T1.ProductDescription_Description, T1.ProductDescription_rowguid, T1.ProductDescription_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductDescriptionID AS ProductDescription_ProductDescriptionID, 
+            T.Description AS ProductDescription_Description, 
+            T.rowguid AS ProductDescription_rowguid, 
+            T.ModifiedDate AS ProductDescription_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductDescription AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductProductPhotoes"><![CDATA[
+    SELECT VALUE -- Constructing ProductProductPhotoes
+        [POC.EF.Web.DAL.ProductProductPhoto](T1.ProductProductPhoto_ProductID, T1.ProductProductPhoto_ProductPhotoID, T1.ProductProductPhoto_Primary, T1.ProductProductPhoto_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductID AS ProductProductPhoto_ProductID, 
+            T.ProductPhotoID AS ProductProductPhoto_ProductPhotoID, 
+            T.Primary AS ProductProductPhoto_Primary, 
+            T.ModifiedDate AS ProductProductPhoto_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductProductPhoto AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductPhotoes"><![CDATA[
+    SELECT VALUE -- Constructing ProductPhotoes
+        [POC.EF.Web.DAL.ProductPhoto](T1.ProductPhoto_ProductPhotoID, T1.ProductPhoto_ThumbNailPhoto, T1.ProductPhoto_ThumbnailPhotoFileName, T1.ProductPhoto_LargePhoto, T1.ProductPhoto_LargePhotoFileName, T1.ProductPhoto_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductPhotoID AS ProductPhoto_ProductPhotoID, 
+            T.ThumbNailPhoto AS ProductPhoto_ThumbNailPhoto, 
+            T.ThumbnailPhotoFileName AS ProductPhoto_ThumbnailPhotoFileName, 
+            T.LargePhoto AS ProductPhoto_LargePhoto, 
+            T.LargePhotoFileName AS ProductPhoto_LargePhotoFileName, 
+            T.ModifiedDate AS ProductPhoto_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductPhoto AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductReviews"><![CDATA[
+    SELECT VALUE -- Constructing ProductReviews
+        [POC.EF.Web.DAL.ProductReview](T1.ProductReview_ProductReviewID, T1.ProductReview_ProductID, T1.ProductReview_ReviewerName, T1.ProductReview_ReviewDate, T1.ProductReview_EmailAddress, T1.ProductReview_Rating, T1.ProductReview_Comments, T1.ProductReview_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductReviewID AS ProductReview_ProductReviewID, 
+            T.ProductID AS ProductReview_ProductID, 
+            T.ReviewerName AS ProductReview_ReviewerName, 
+            T.ReviewDate AS ProductReview_ReviewDate, 
+            T.EmailAddress AS ProductReview_EmailAddress, 
+            T.Rating AS ProductReview_Rating, 
+            T.Comments AS ProductReview_Comments, 
+            T.ModifiedDate AS ProductReview_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductReview AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductSubcategories"><![CDATA[
+    SELECT VALUE -- Constructing ProductSubcategories
+        [POC.EF.Web.DAL.ProductSubcategory](T1.ProductSubcategory_ProductSubcategoryID, T1.ProductSubcategory_ProductCategoryID, T1.ProductSubcategory_Name, T1.ProductSubcategory_rowguid, T1.ProductSubcategory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductSubcategoryID AS ProductSubcategory_ProductSubcategoryID, 
+            T.ProductCategoryID AS ProductSubcategory_ProductCategoryID, 
+            T.Name AS ProductSubcategory_Name, 
+            T.rowguid AS ProductSubcategory_rowguid, 
+            T.ModifiedDate AS ProductSubcategory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductSubcategory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ProductCategories"><![CDATA[
+    SELECT VALUE -- Constructing ProductCategories
+        [POC.EF.Web.DAL.ProductCategory](T1.ProductCategory_ProductCategoryID, T1.ProductCategory_Name, T1.ProductCategory_rowguid, T1.ProductCategory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ProductCategoryID AS ProductCategory_ProductCategoryID, 
+            T.Name AS ProductCategory_Name, 
+            T.rowguid AS ProductCategory_rowguid, 
+            T.ModifiedDate AS ProductCategory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ProductCategory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ShoppingCartItems"><![CDATA[
+    SELECT VALUE -- Constructing ShoppingCartItems
+        [POC.EF.Web.DAL.ShoppingCartItem](T1.ShoppingCartItem_ShoppingCartItemID, T1.ShoppingCartItem_ShoppingCartID, T1.ShoppingCartItem_Quantity, T1.ShoppingCartItem_ProductID, T1.ShoppingCartItem_DateCreated, T1.ShoppingCartItem_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ShoppingCartItemID AS ShoppingCartItem_ShoppingCartItemID, 
+            T.ShoppingCartID AS ShoppingCartItem_ShoppingCartID, 
+            T.Quantity AS ShoppingCartItem_Quantity, 
+            T.ProductID AS ShoppingCartItem_ProductID, 
+            T.DateCreated AS ShoppingCartItem_DateCreated, 
+            T.ModifiedDate AS ShoppingCartItem_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ShoppingCartItem AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SpecialOfferProducts"><![CDATA[
+    SELECT VALUE -- Constructing SpecialOfferProducts
+        [POC.EF.Web.DAL.SpecialOfferProduct](T1.SpecialOfferProduct_SpecialOfferID, T1.SpecialOfferProduct_ProductID, T1.SpecialOfferProduct_rowguid, T1.SpecialOfferProduct_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SpecialOfferID AS SpecialOfferProduct_SpecialOfferID, 
+            T.ProductID AS SpecialOfferProduct_ProductID, 
+            T.rowguid AS SpecialOfferProduct_rowguid, 
+            T.ModifiedDate AS SpecialOfferProduct_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SpecialOfferProduct AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SalesOrderDetails"><![CDATA[
+    SELECT VALUE -- Constructing SalesOrderDetails
+        [POC.EF.Web.DAL.SalesOrderDetail](T1.SalesOrderDetail_SalesOrderID, T1.SalesOrderDetail_SalesOrderDetailID, T1.SalesOrderDetail_CarrierTrackingNumber, T1.SalesOrderDetail_OrderQty, T1.SalesOrderDetail_ProductID, T1.SalesOrderDetail_SpecialOfferID, T1.SalesOrderDetail_UnitPrice, T1.SalesOrderDetail_UnitPriceDiscount, T1.SalesOrderDetail_LineTotal, T1.SalesOrderDetail_rowguid, T1.SalesOrderDetail_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesOrderID AS SalesOrderDetail_SalesOrderID, 
+            T.SalesOrderDetailID AS SalesOrderDetail_SalesOrderDetailID, 
+            T.CarrierTrackingNumber AS SalesOrderDetail_CarrierTrackingNumber, 
+            T.OrderQty AS SalesOrderDetail_OrderQty, 
+            T.ProductID AS SalesOrderDetail_ProductID, 
+            T.SpecialOfferID AS SalesOrderDetail_SpecialOfferID, 
+            T.UnitPrice AS SalesOrderDetail_UnitPrice, 
+            T.UnitPriceDiscount AS SalesOrderDetail_UnitPriceDiscount, 
+            T.LineTotal AS SalesOrderDetail_LineTotal, 
+            T.rowguid AS SalesOrderDetail_rowguid, 
+            T.ModifiedDate AS SalesOrderDetail_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SalesOrderDetail AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SpecialOffers"><![CDATA[
+    SELECT VALUE -- Constructing SpecialOffers
+        [POC.EF.Web.DAL.SpecialOffer](T1.SpecialOffer_SpecialOfferID, T1.SpecialOffer_Description, T1.SpecialOffer_DiscountPct, T1.SpecialOffer_Type, T1.SpecialOffer_Category, T1.SpecialOffer_StartDate, T1.SpecialOffer_EndDate, T1.SpecialOffer_MinQty, T1.SpecialOffer_MaxQty, T1.SpecialOffer_rowguid, T1.SpecialOffer_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SpecialOfferID AS SpecialOffer_SpecialOfferID, 
+            T.Description AS SpecialOffer_Description, 
+            T.DiscountPct AS SpecialOffer_DiscountPct, 
+            T.Type AS SpecialOffer_Type, 
+            T.Category AS SpecialOffer_Category, 
+            T.StartDate AS SpecialOffer_StartDate, 
+            T.EndDate AS SpecialOffer_EndDate, 
+            T.MinQty AS SpecialOffer_MinQty, 
+            T.MaxQty AS SpecialOffer_MaxQty, 
+            T.rowguid AS SpecialOffer_rowguid, 
+            T.ModifiedDate AS SpecialOffer_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SpecialOffer AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.TransactionHistories"><![CDATA[
+    SELECT VALUE -- Constructing TransactionHistories
+        [POC.EF.Web.DAL.TransactionHistory](T1.TransactionHistory_TransactionID, T1.TransactionHistory_ProductID, T1.TransactionHistory_ReferenceOrderID, T1.TransactionHistory_ReferenceOrderLineID, T1.TransactionHistory_TransactionDate, T1.TransactionHistory_TransactionType, T1.TransactionHistory_Quantity, T1.TransactionHistory_ActualCost, T1.TransactionHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.TransactionID AS TransactionHistory_TransactionID, 
+            T.ProductID AS TransactionHistory_ProductID, 
+            T.ReferenceOrderID AS TransactionHistory_ReferenceOrderID, 
+            T.ReferenceOrderLineID AS TransactionHistory_ReferenceOrderLineID, 
+            T.TransactionDate AS TransactionHistory_TransactionDate, 
+            T.TransactionType AS TransactionHistory_TransactionType, 
+            T.Quantity AS TransactionHistory_Quantity, 
+            T.ActualCost AS TransactionHistory_ActualCost, 
+            T.ModifiedDate AS TransactionHistory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.TransactionHistory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ShipMethods"><![CDATA[
+    SELECT VALUE -- Constructing ShipMethods
+        [POC.EF.Web.DAL.ShipMethod](T1.ShipMethod_ShipMethodID, T1.ShipMethod_Name, T1.ShipMethod_ShipBase, T1.ShipMethod_ShipRate, T1.ShipMethod_rowguid, T1.ShipMethod_ModifiedDate)
+    FROM (
+        SELECT 
+            T.ShipMethodID AS ShipMethod_ShipMethodID, 
+            T.Name AS ShipMethod_Name, 
+            T.ShipBase AS ShipMethod_ShipBase, 
+            T.ShipRate AS ShipMethod_ShipRate, 
+            T.rowguid AS ShipMethod_rowguid, 
+            T.ModifiedDate AS ShipMethod_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.ShipMethod AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SalesPersonQuotaHistories"><![CDATA[
+    SELECT VALUE -- Constructing SalesPersonQuotaHistories
+        [POC.EF.Web.DAL.SalesPersonQuotaHistory](T1.SalesPersonQuotaHistory_BusinessEntityID, T1.SalesPersonQuotaHistory_QuotaDate, T1.SalesPersonQuotaHistory_SalesQuota, T1.SalesPersonQuotaHistory_rowguid, T1.SalesPersonQuotaHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS SalesPersonQuotaHistory_BusinessEntityID, 
+            T.QuotaDate AS SalesPersonQuotaHistory_QuotaDate, 
+            T.SalesQuota AS SalesPersonQuotaHistory_SalesQuota, 
+            T.rowguid AS SalesPersonQuotaHistory_rowguid, 
+            T.ModifiedDate AS SalesPersonQuotaHistory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SalesPersonQuotaHistory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SalesTerritoryHistories"><![CDATA[
+    SELECT VALUE -- Constructing SalesTerritoryHistories
+        [POC.EF.Web.DAL.SalesTerritoryHistory](T1.SalesTerritoryHistory_BusinessEntityID, T1.SalesTerritoryHistory_TerritoryID, T1.SalesTerritoryHistory_StartDate, T1.SalesTerritoryHistory_EndDate, T1.SalesTerritoryHistory_rowguid, T1.SalesTerritoryHistory_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS SalesTerritoryHistory_BusinessEntityID, 
+            T.TerritoryID AS SalesTerritoryHistory_TerritoryID, 
+            T.StartDate AS SalesTerritoryHistory_StartDate, 
+            T.EndDate AS SalesTerritoryHistory_EndDate, 
+            T.rowguid AS SalesTerritoryHistory_rowguid, 
+            T.ModifiedDate AS SalesTerritoryHistory_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SalesTerritoryHistory AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Stores"><![CDATA[
+    SELECT VALUE -- Constructing Stores
+        [POC.EF.Web.DAL.Store](T1.Store_BusinessEntityID, T1.Store_Name, T1.Store_SalesPersonID, T1.Store_Demographics, T1.Store_rowguid, T1.Store_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Store_BusinessEntityID, 
+            T.Name AS Store_Name, 
+            T.SalesPersonID AS Store_SalesPersonID, 
+            T.Demographics AS Store_Demographics, 
+            T.rowguid AS Store_rowguid, 
+            T.ModifiedDate AS Store_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Store AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.StateProvinces"><![CDATA[
+    SELECT VALUE -- Constructing StateProvinces
+        [POC.EF.Web.DAL.StateProvince](T1.StateProvince_StateProvinceID, T1.StateProvince_StateProvinceCode, T1.StateProvince_CountryRegionCode, T1.StateProvince_IsOnlyStateProvinceFlag, T1.StateProvince_Name, T1.StateProvince_TerritoryID, T1.StateProvince_rowguid, T1.StateProvince_ModifiedDate)
+    FROM (
+        SELECT 
+            T.StateProvinceID AS StateProvince_StateProvinceID, 
+            T.StateProvinceCode AS StateProvince_StateProvinceCode, 
+            T.CountryRegionCode AS StateProvince_CountryRegionCode, 
+            T.IsOnlyStateProvinceFlag AS StateProvince_IsOnlyStateProvinceFlag, 
+            T.Name AS StateProvince_Name, 
+            T.TerritoryID AS StateProvince_TerritoryID, 
+            T.rowguid AS StateProvince_rowguid, 
+            T.ModifiedDate AS StateProvince_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.StateProvince AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SalesTaxRates"><![CDATA[
+    SELECT VALUE -- Constructing SalesTaxRates
+        [POC.EF.Web.DAL.SalesTaxRate](T1.SalesTaxRate_SalesTaxRateID, T1.SalesTaxRate_StateProvinceID, T1.SalesTaxRate_TaxType, T1.SalesTaxRate_TaxRate, T1.SalesTaxRate_Name, T1.SalesTaxRate_rowguid, T1.SalesTaxRate_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesTaxRateID AS SalesTaxRate_SalesTaxRateID, 
+            T.StateProvinceID AS SalesTaxRate_StateProvinceID, 
+            T.TaxType AS SalesTaxRate_TaxType, 
+            T.TaxRate AS SalesTaxRate_TaxRate, 
+            T.Name AS SalesTaxRate_Name, 
+            T.rowguid AS SalesTaxRate_rowguid, 
+            T.ModifiedDate AS SalesTaxRate_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SalesTaxRate AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SalesOrderHeaderSalesReasons"><![CDATA[
+    SELECT VALUE -- Constructing SalesOrderHeaderSalesReasons
+        [POC.EF.Web.DAL.SalesOrderHeaderSalesReason](T1.SalesOrderHeaderSalesReason_SalesOrderID, T1.SalesOrderHeaderSalesReason_SalesReasonID, T1.SalesOrderHeaderSalesReason_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesOrderID AS SalesOrderHeaderSalesReason_SalesOrderID, 
+            T.SalesReasonID AS SalesOrderHeaderSalesReason_SalesReasonID, 
+            T.ModifiedDate AS SalesOrderHeaderSalesReason_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SalesOrderHeaderSalesReason AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.SalesReasons"><![CDATA[
+    SELECT VALUE -- Constructing SalesReasons
+        [POC.EF.Web.DAL.SalesReason](T1.SalesReason_SalesReasonID, T1.SalesReason_Name, T1.SalesReason_ReasonType, T1.SalesReason_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SalesReasonID AS SalesReason_SalesReasonID, 
+            T.Name AS SalesReason_Name, 
+            T.ReasonType AS SalesReason_ReasonType, 
+            T.ModifiedDate AS SalesReason_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.SalesReason AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.EmailAddresses"><![CDATA[
+    SELECT VALUE -- Constructing EmailAddresses
+        [POC.EF.Web.DAL.EmailAddress](T1.EmailAddress_BusinessEntityID, T1.EmailAddress_EmailAddressID, T1.EmailAddress_EmailAddress1, T1.EmailAddress_rowguid, T1.EmailAddress_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS EmailAddress_BusinessEntityID, 
+            T.EmailAddressID AS EmailAddress_EmailAddressID, 
+            T.EmailAddress AS EmailAddress_EmailAddress1, 
+            T.rowguid AS EmailAddress_rowguid, 
+            T.ModifiedDate AS EmailAddress_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.EmailAddress AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.Passwords"><![CDATA[
+    SELECT VALUE -- Constructing Passwords
+        [POC.EF.Web.DAL.Password](T1.Password_BusinessEntityID, T1.Password_PasswordHash, T1.Password_PasswordSalt, T1.Password_rowguid, T1.Password_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS Password_BusinessEntityID, 
+            T.PasswordHash AS Password_PasswordHash, 
+            T.PasswordSalt AS Password_PasswordSalt, 
+            T.rowguid AS Password_rowguid, 
+            T.ModifiedDate AS Password_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.Password AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.PersonPhones"><![CDATA[
+    SELECT VALUE -- Constructing PersonPhones
+        [POC.EF.Web.DAL.PersonPhone](T1.PersonPhone_BusinessEntityID, T1.PersonPhone_PhoneNumber, T1.PersonPhone_PhoneNumberTypeID, T1.PersonPhone_ModifiedDate)
+    FROM (
+        SELECT 
+            T.BusinessEntityID AS PersonPhone_BusinessEntityID, 
+            T.PhoneNumber AS PersonPhone_PhoneNumber, 
+            T.PhoneNumberTypeID AS PersonPhone_PhoneNumberTypeID, 
+            T.ModifiedDate AS PersonPhone_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.PersonPhone AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.PhoneNumberTypes"><![CDATA[
+    SELECT VALUE -- Constructing PhoneNumberTypes
+        [POC.EF.Web.DAL.PhoneNumberType](T1.PhoneNumberType_PhoneNumberTypeID, T1.PhoneNumberType_Name, T1.PhoneNumberType_ModifiedDate)
+    FROM (
+        SELECT 
+            T.PhoneNumberTypeID AS PhoneNumberType_PhoneNumberTypeID, 
+            T.Name AS PhoneNumberType_Name, 
+            T.ModifiedDate AS PhoneNumberType_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.PhoneNumberType AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.AWBuildVersion"><![CDATA[
+    SELECT VALUE -- Constructing AWBuildVersion
+        [CodeFirstDatabaseSchema.AWBuildVersion](T1.AWBuildVersion_SystemInformationID, T1.[AWBuildVersion_Database Version], T1.AWBuildVersion_VersionDate, T1.AWBuildVersion_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SystemInformationID AS AWBuildVersion_SystemInformationID, 
+            T.Database_Version AS [AWBuildVersion_Database Version], 
+            T.VersionDate AS AWBuildVersion_VersionDate, 
+            T.ModifiedDate AS AWBuildVersion_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.AWBuildVersions AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.AWBuildVersions"><![CDATA[
+    SELECT VALUE -- Constructing AWBuildVersions
+        [POC.EF.Web.DAL.AWBuildVersion](T1.AWBuildVersion_SystemInformationID, T1.[AWBuildVersion.Database_Version], T1.AWBuildVersion_VersionDate, T1.AWBuildVersion_ModifiedDate)
+    FROM (
+        SELECT 
+            T.SystemInformationID AS AWBuildVersion_SystemInformationID, 
+            T.[Database Version] AS [AWBuildVersion.Database_Version], 
+            T.VersionDate AS AWBuildVersion_VersionDate, 
+            T.ModifiedDate AS AWBuildVersion_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.AWBuildVersion AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.DatabaseLog"><![CDATA[
+    SELECT VALUE -- Constructing DatabaseLog
+        [CodeFirstDatabaseSchema.DatabaseLog](T1.DatabaseLog_DatabaseLogID, T1.DatabaseLog_PostTime, T1.DatabaseLog_DatabaseUser, T1.DatabaseLog_Event, T1.DatabaseLog_Schema, T1.DatabaseLog_Object, T1.DatabaseLog_TSQL, T1.DatabaseLog_XmlEvent)
+    FROM (
+        SELECT 
+            T.DatabaseLogID AS DatabaseLog_DatabaseLogID, 
+            T.PostTime AS DatabaseLog_PostTime, 
+            T.DatabaseUser AS DatabaseLog_DatabaseUser, 
+            T.Event AS DatabaseLog_Event, 
+            T.Schema AS DatabaseLog_Schema, 
+            T.Object AS DatabaseLog_Object, 
+            T.TSQL AS DatabaseLog_TSQL, 
+            T.XmlEvent AS DatabaseLog_XmlEvent, 
+            True AS _from0
+        FROM ThickDbContext.DatabaseLogs AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.DatabaseLogs"><![CDATA[
+    SELECT VALUE -- Constructing DatabaseLogs
+        [POC.EF.Web.DAL.DatabaseLog](T1.DatabaseLog_DatabaseLogID, T1.DatabaseLog_PostTime, T1.DatabaseLog_DatabaseUser, T1.DatabaseLog_Event, T1.DatabaseLog_Schema, T1.DatabaseLog_Object, T1.DatabaseLog_TSQL, T1.DatabaseLog_XmlEvent)
+    FROM (
+        SELECT 
+            T.DatabaseLogID AS DatabaseLog_DatabaseLogID, 
+            T.PostTime AS DatabaseLog_PostTime, 
+            T.DatabaseUser AS DatabaseLog_DatabaseUser, 
+            T.Event AS DatabaseLog_Event, 
+            T.Schema AS DatabaseLog_Schema, 
+            T.Object AS DatabaseLog_Object, 
+            T.TSQL AS DatabaseLog_TSQL, 
+            T.XmlEvent AS DatabaseLog_XmlEvent, 
+            True AS _from0
+        FROM CodeFirstDatabase.DatabaseLog AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.ErrorLog"><![CDATA[
+    SELECT VALUE -- Constructing ErrorLog
+        [CodeFirstDatabaseSchema.ErrorLog](T1.ErrorLog_ErrorLogID, T1.ErrorLog_ErrorTime, T1.ErrorLog_UserName, T1.ErrorLog_ErrorNumber, T1.ErrorLog_ErrorSeverity, T1.ErrorLog_ErrorState, T1.ErrorLog_ErrorProcedure, T1.ErrorLog_ErrorLine, T1.ErrorLog_ErrorMessage)
+    FROM (
+        SELECT 
+            T.ErrorLogID AS ErrorLog_ErrorLogID, 
+            T.ErrorTime AS ErrorLog_ErrorTime, 
+            T.UserName AS ErrorLog_UserName, 
+            T.ErrorNumber AS ErrorLog_ErrorNumber, 
+            T.ErrorSeverity AS ErrorLog_ErrorSeverity, 
+            T.ErrorState AS ErrorLog_ErrorState, 
+            T.ErrorProcedure AS ErrorLog_ErrorProcedure, 
+            T.ErrorLine AS ErrorLog_ErrorLine, 
+            T.ErrorMessage AS ErrorLog_ErrorMessage, 
+            True AS _from0
+        FROM ThickDbContext.ErrorLogs AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.ErrorLogs"><![CDATA[
+    SELECT VALUE -- Constructing ErrorLogs
+        [POC.EF.Web.DAL.ErrorLog](T1.ErrorLog_ErrorLogID, T1.ErrorLog_ErrorTime, T1.ErrorLog_UserName, T1.ErrorLog_ErrorNumber, T1.ErrorLog_ErrorSeverity, T1.ErrorLog_ErrorState, T1.ErrorLog_ErrorProcedure, T1.ErrorLog_ErrorLine, T1.ErrorLog_ErrorMessage)
+    FROM (
+        SELECT 
+            T.ErrorLogID AS ErrorLog_ErrorLogID, 
+            T.ErrorTime AS ErrorLog_ErrorTime, 
+            T.UserName AS ErrorLog_UserName, 
+            T.ErrorNumber AS ErrorLog_ErrorNumber, 
+            T.ErrorSeverity AS ErrorLog_ErrorSeverity, 
+            T.ErrorState AS ErrorLog_ErrorState, 
+            T.ErrorProcedure AS ErrorLog_ErrorProcedure, 
+            T.ErrorLine AS ErrorLog_ErrorLine, 
+            T.ErrorMessage AS ErrorLog_ErrorMessage, 
+            True AS _from0
+        FROM CodeFirstDatabase.ErrorLog AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.sysdiagram"><![CDATA[
+    SELECT VALUE -- Constructing sysdiagram
+        [CodeFirstDatabaseSchema.sysdiagram](T1.[sysdiagram.diagram_id], T1.sysdiagram_name, T1.[sysdiagram.principal_id], T1.sysdiagram_version, T1.sysdiagram_definition)
+    FROM (
+        SELECT 
+            T.diagram_id AS [sysdiagram.diagram_id], 
+            T.name AS sysdiagram_name, 
+            T.principal_id AS [sysdiagram.principal_id], 
+            T.version AS sysdiagram_version, 
+            T.definition AS sysdiagram_definition, 
+            True AS _from0
+        FROM ThickDbContext.sysdiagrams AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.sysdiagrams"><![CDATA[
+    SELECT VALUE -- Constructing sysdiagrams
+        [POC.EF.Web.DAL.sysdiagram](T1.[sysdiagram.diagram_id], T1.sysdiagram_name, T1.[sysdiagram.principal_id], T1.sysdiagram_version, T1.sysdiagram_definition)
+    FROM (
+        SELECT 
+            T.diagram_id AS [sysdiagram.diagram_id], 
+            T.name AS sysdiagram_name, 
+            T.principal_id AS [sysdiagram.principal_id], 
+            T.version AS sysdiagram_version, 
+            T.definition AS sysdiagram_definition, 
+            True AS _from0
+        FROM CodeFirstDatabase.sysdiagram AS T
+    ) AS T1]]></view>
+    <view extent="CodeFirstDatabase.TransactionHistoryArchive"><![CDATA[
+    SELECT VALUE -- Constructing TransactionHistoryArchive
+        [CodeFirstDatabaseSchema.TransactionHistoryArchive](T1.TransactionHistoryArchive_TransactionID, T1.TransactionHistoryArchive_ProductID, T1.TransactionHistoryArchive_ReferenceOrderID, T1.TransactionHistoryArchive_ReferenceOrderLineID, T1.TransactionHistoryArchive_TransactionDate, T1.TransactionHistoryArchive_TransactionType, T1.TransactionHistoryArchive_Quantity, T1.TransactionHistoryArchive_ActualCost, T1.TransactionHistoryArchive_ModifiedDate)
+    FROM (
+        SELECT 
+            T.TransactionID AS TransactionHistoryArchive_TransactionID, 
+            T.ProductID AS TransactionHistoryArchive_ProductID, 
+            T.ReferenceOrderID AS TransactionHistoryArchive_ReferenceOrderID, 
+            T.ReferenceOrderLineID AS TransactionHistoryArchive_ReferenceOrderLineID, 
+            T.TransactionDate AS TransactionHistoryArchive_TransactionDate, 
+            T.TransactionType AS TransactionHistoryArchive_TransactionType, 
+            T.Quantity AS TransactionHistoryArchive_Quantity, 
+            T.ActualCost AS TransactionHistoryArchive_ActualCost, 
+            T.ModifiedDate AS TransactionHistoryArchive_ModifiedDate, 
+            True AS _from0
+        FROM ThickDbContext.TransactionHistoryArchives AS T
+    ) AS T1]]></view>
+    <view extent="ThickDbContext.TransactionHistoryArchives"><![CDATA[
+    SELECT VALUE -- Constructing TransactionHistoryArchives
+        [POC.EF.Web.DAL.TransactionHistoryArchive](T1.TransactionHistoryArchive_TransactionID, T1.TransactionHistoryArchive_ProductID, T1.TransactionHistoryArchive_ReferenceOrderID, T1.TransactionHistoryArchive_ReferenceOrderLineID, T1.TransactionHistoryArchive_TransactionDate, T1.TransactionHistoryArchive_TransactionType, T1.TransactionHistoryArchive_Quantity, T1.TransactionHistoryArchive_ActualCost, T1.TransactionHistoryArchive_ModifiedDate)
+    FROM (
+        SELECT 
+            T.TransactionID AS TransactionHistoryArchive_TransactionID, 
+            T.ProductID AS TransactionHistoryArchive_ProductID, 
+            T.ReferenceOrderID AS TransactionHistoryArchive_ReferenceOrderID, 
+            T.ReferenceOrderLineID AS TransactionHistoryArchive_ReferenceOrderLineID, 
+            T.TransactionDate AS TransactionHistoryArchive_TransactionDate, 
+            T.TransactionType AS TransactionHistoryArchive_TransactionType, 
+            T.Quantity AS TransactionHistoryArchive_Quantity, 
+            T.ActualCost AS TransactionHistoryArchive_ActualCost, 
+            T.ModifiedDate AS TransactionHistoryArchive_ModifiedDate, 
+            True AS _from0
+        FROM CodeFirstDatabase.TransactionHistoryArchive AS T
+    ) AS T1]]></view>
+  </mapping-views>
+</views>

@@ -34,10 +34,18 @@ namespace POC.EF.Web.Controllers
         [Route("api/EF/Fat/{id:int}")]
         public IHttpActionResult FatGet(int id)
         {
+            var connectionString = new SqlConnectionStringBuilder()
+            {
+                DataSource = "DESKTOP-9MCCCFM",
+                InitialCatalog = "AdventureWorks2014",
+                ConnectTimeout = 30,
+                IntegratedSecurity = true,
+                MultipleActiveResultSets = true
+            }.ToString();
             var timer = new Stopwatch();
             timer.Start();
 
-            using (var dbContext = new FatDbContext())
+            using (var dbContext = new ThickDbContext(connectionString ))
             {
                 //dbContext.Configuration.AutoDetectChangesEnabled = false;
                 //dbContext.Configuration.LazyLoadingEnabled = false;

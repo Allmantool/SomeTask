@@ -19,7 +19,7 @@ namespace POC.EF.Web.DAL
             });
 
 #if DEBUG
-            Database.Log = (sql) => Debug.WriteLine(sql);
+            //Database.Log = (sql) => Debug.WriteLine(sql);
 #endif
         }
 
