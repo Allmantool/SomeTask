@@ -65,6 +65,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behavior Patterns\ChainOfResponsibility\Abstraction\Handler.cs" />
+    <Compile Include="Behavior Patterns\ChainOfResponsibility\ChainOfResponsibility.Tests.cs" />
     <Compile Include="Behavior Patterns\Mediator\Abstraction\Colleague.cs" />
     <Compile Include="Behavior Patterns\Mediator\Abstraction\TheMediator.cs" />
     <Compile Include="Behavior Patterns\Mediator\Implementation\CustomerColleague.cs" />
@@ -122,6 +124,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Behavior Patterns\ChainOfResponsibility\Implementation\" />
     <Folder Include="Structural Patterns\Facade\Abstract\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
