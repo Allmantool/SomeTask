@@ -1,4 +1,7 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
+using Test.DesignPatterns.UnitTets.Behavior_Patterns.ChainOfResponsibility.Abstraction;
+using Test.DesignPatterns.UnitTets.Behavior_Patterns.ChainOfResponsibility.Implementation;
 
 namespace Test.DesignPatterns.UnitTets.Behavior_Patterns.ChainOfResponsibility
 {
@@ -8,10 +11,25 @@ namespace Test.DesignPatterns.UnitTets.Behavior_Patterns.ChainOfResponsibility
         [Test]
         public void MainTest()
         {
-            //Handler h1 = new ConcreteHandler1();
-            //Handler h2 = new ConcreteHandler2();
-            //h1.Successor = h2;
-            //h1.HandleRequest(2);
+            Approver larry = new Director();
+            Approver sam = new VicePresident();
+            Approver tammy = new President();
+
+            larry.SetSuccessor(sam);
+            sam.SetSuccessor(tammy);
+
+            // Generate and process purchase requests
+            Purchase p = new Purchase(2034, 350.00, "Assets");
+            larry.ProcessRequest(p);
+
+            p = new Purchase(2035, 32590.10, "Project X");
+            larry.ProcessRequest(p);
+
+            p = new Purchase(2036, 122100.00, "Project Y");
+            larry.ProcessRequest(p);
+
+            // Wait for user
+            Console.ReadKey();
         }
     }
 }
