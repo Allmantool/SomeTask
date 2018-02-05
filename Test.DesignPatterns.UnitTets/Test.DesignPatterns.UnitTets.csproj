@@ -79,6 +79,12 @@
     <Compile Include="Behavior Patterns\Observer\Implementation\Broker.cs" />
     <Compile Include="Behavior Patterns\Observer\Implementation\Stock.cs" />
     <Compile Include="Behavior Patterns\Observer\Implementation\StockInfo.cs" />
+    <Compile Include="Behavior Patterns\State\Abstraction\State.cs" />
+    <Compile Include="Behavior Patterns\State\Implementation\Account.cs" />
+    <Compile Include="Behavior Patterns\State\Implementation\GoldState.cs" />
+    <Compile Include="Behavior Patterns\State\Implementation\SilverState.cs" />
+    <Compile Include="Behavior Patterns\State\Implementation\RedState.cs" />
+    <Compile Include="Behavior Patterns\State\State.Tests.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\AbstractFactory.Tests.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\Abstraction\HeroFactory.cs" />
     <Compile Include="Behavior Patterns\Observer\Abstraction\IObserver.cs" />
