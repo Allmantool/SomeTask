@@ -93,6 +93,11 @@
     <Compile Include="Behavior Patterns\State\Implementation\SilverState.cs" />
     <Compile Include="Behavior Patterns\State\Implementation\RedState.cs" />
     <Compile Include="Behavior Patterns\State\State.Tests.cs" />
+    <Compile Include="Behavior Patterns\Strategy\Car.cs" />
+    <Compile Include="Behavior Patterns\Strategy\Implementation\ElectricMove.cs" />
+    <Compile Include="Behavior Patterns\Strategy\Implementation\PetrolMove.cs" />
+    <Compile Include="Behavior Patterns\Strategy\Interfaces\IMovable.cs" />
+    <Compile Include="Behavior Patterns\Strategy\Strategy.Tests.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\AbstractFactory.Tests.cs" />
     <Compile Include="Creational Patterns\AbstractFactory\Abstraction\HeroFactory.cs" />
     <Compile Include="Behavior Patterns\Observer\Abstraction\IObserver.cs" />
