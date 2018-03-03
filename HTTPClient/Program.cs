@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace HTTPClient
 {
@@ -14,6 +9,8 @@ namespace HTTPClient
             var browser = new OpenQA.Selenium.Chrome.ChromeDriver();
 
             browser.Navigate().GoToUrl(@"https://npm.by/");
+
+            var dataDirection = browser.FindElement(By.TagName("data-direction"));
 
             var element = browser.FindElement(By.Id("reserveDateItem"));
             element.Click();
