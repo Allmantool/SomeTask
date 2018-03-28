@@ -1,59 +1,57 @@
-﻿using OpenQA.Selenium;
-
-namespace HTTPClient
+﻿namespace HTTPClient
 {
+    using OpenQA.Selenium;
+    using System.Linq;
+    using OpenQA.Selenium.Chrome;
+    using System.Threading;
+
     public class Program
     {
+        private const string demantedDay = "30";
+        private const int MaxIterationCount = 5;
+        private const int DelaySecond = 3;
+        private const string DemandedTime = "18:45";
+
         public static void Main(string[] args)
         {
-            var browser = new OpenQA.Selenium.Chrome.ChromeDriver();
+            var browser = new ChromeDriver();
 
             browser.Navigate().GoToUrl(@"https://npm.by/");
 
-            var dataDirection = browser.FindElement(By.TagName("data-direction"));
+            var dayElement = GetDesiredDateElement(browser);
 
-            var element = browser.FindElement(By.Id("reserveDateItem"));
-            element.Click();
+            var iteration = 0;
+            while (iteration <= MaxIterationCount)
+            {
+                TimeToTimeClicking(dayElement);
+                IsThereFreeSpace();
+
+                Thread.Sleep(DelaySecond * 1000);
+                iteration++;
+            }
 
             browser.Quit();
+        }
 
-            //var httpClientHandler = new HttpClientHandler()
-            //{
-            //    Credentials = new NetworkCredential("296874243", "geneva2788", "npm.by"),
-            //};
+        private static IWebElement GetDesiredDateElement(ChromeDriver browser)
+        {
+            var calendar = browser.FindElement(By.ClassName("xdsoft_calendar"));
+            return calendar
+                .FindElements(By.TagName("td"))
+                .SingleOrDefault(x => x.Text.Equals(demantedDay, System.StringComparison.CurrentCultureIgnoreCase));
+        }
 
-            //var client = new HttpClient(httpClientHandler)
-            //{
-            //    BaseAddress = new Uri(@"https://npm.by/"),
-            //};
+        // TODO: This method should click on target html element the required number of times.
+        private static void TimeToTimeClicking(IWebElement element)
+        {
+            element.Click();
+        }
 
-            ////id_departure_station: 36
-            ////departure_is_waypoint: 0
-            ////id_arrival_station: 63
-            ////arrival_is_waypoint: 0
-            ////date: 06 - 01 - 2018
-
-            //var pairs = new List<KeyValuePair<string, string>>
-            //{
-            //    new KeyValuePair<string, string>( "id_departure_station", "36" ),
-            //    new KeyValuePair<string, string>( "departure_is_waypoint", "0"  ),
-            //    new KeyValuePair<string, string> ( "id_arrival_station", "63"  ),
-            //    new KeyValuePair<string, string> ( "arrival_is_waypoint","0" ),
-            //    new KeyValuePair<string, string> ( "date", "06-01-2018" )
-            //};
-            //var content = new FormUrlEncodedContent(pairs);
-
-            //var response = client.PostAsync(@"https://npm.by/booking/route-time", content).Result;
-
-
-            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "Your Oauth token");
-
-            //client.DefaultRequestHeaders.Authorization =
-            //    new AuthenticationHeaderValue(
-            //        "Basic",
-            //        Convert.ToBase64String(
-            //            System.Text.ASCIIEncoding.ASCII.GetBytes(
-            //                string.Format("{0}:{1}", "yourusername", "yourpwd"))));
+        // TODO: This method responsable for nofyfication about existing free space on demand time.
+        // Read actual value from time table (right table).
+        private static bool IsThereFreeSpace()
+        {
+            return false;
         }
     }
 }
