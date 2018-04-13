@@ -47,7 +47,7 @@
             element.Click();
         }
 
-        // TODO: This method responsable for nofyfication about existing free space on demand time.
+        // TODO: This method responsible for notification about existing free space on demand time.
         // Read actual value from time table (right table).
         private static bool IsThereFreeSpace()
         {

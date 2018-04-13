@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{1DFFB42A-1E57-4E31-8507-7BDCCFE08D77}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLTest", "XMLTest\XMLTest.csproj", "{5497B323-F5D2-4A5D-A05E-B3A70DE50554}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pluralsight.Dynamic.Test", "Pluralsight.Dynamic.Test\Pluralsight.Dynamic.Test.csproj", "{2D96A753-B75B-467B-BF4E-940216CEED88}"
@@ -13,16 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.DesignPatterns.UnitTet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTTPClient", "HTTPClient\HTTPClient.csproj", "{CFD9745D-9839-48BE-A767-19EC76EEB84D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPL.Tests", "TPL.Tests\TPL.Tests.csproj", "{EAE62E51-3991-4E32-A029-209A30ACAD73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1DFFB42A-1E57-4E31-8507-7BDCCFE08D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1DFFB42A-1E57-4E31-8507-7BDCCFE08D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1DFFB42A-1E57-4E31-8507-7BDCCFE08D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1DFFB42A-1E57-4E31-8507-7BDCCFE08D77}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5497B323-F5D2-4A5D-A05E-B3A70DE50554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5497B323-F5D2-4A5D-A05E-B3A70DE50554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5497B323-F5D2-4A5D-A05E-B3A70DE50554}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{CFD9745D-9839-48BE-A767-19EC76EEB84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFD9745D-9839-48BE-A767-19EC76EEB84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFD9745D-9839-48BE-A767-19EC76EEB84D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE62E51-3991-4E32-A029-209A30ACAD73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE62E51-3991-4E32-A029-209A30ACAD73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE62E51-3991-4E32-A029-209A30ACAD73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE62E51-3991-4E32-A029-209A30ACAD73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
